@@ -1,0 +1,135 @@
+import 'package:fibromyalgia_hospital/screens/ui/enable_location_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/initial_pages/data/onBoarding_model.dart';
+import 'package:fibromyalgia_hospital/screens/ui/medical_records_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/my_cart_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/sign_in/join_us_screen.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
+import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
+import 'package:flutter/material.dart';
+
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
+  static const String routeName = 'onBoardingScreen';
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  PageController controller = PageController();
+
+  int currentIndex = 0;
+  bool isLastPage = false;
+
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Scaffold(
+        body: SafeArea(
+            child: Stack(children: [
+      const CustomBackground(),
+      Positioned(
+        top: -10,
+        left: currentIndex == 1 ? 175 : -104,
+        child: CircleAvatar(
+          backgroundColor: AppColors.greenColor,
+          radius: width * .4,
+        ),
+      ),
+      Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Expanded(
+            child: PageView.builder(
+                onPageChanged: (value) {
+                  setState(() {
+                    currentIndex = value;
+                  });
+                  if (value + 1 == OnBoardingModel.onBoardingScreens.length) {
+                    setState(() {
+                      isLastPage = true;
+                    });
+                  } else {
+                    setState(() {
+                      isLastPage = false;
+                    });
+                  }
+                },
+                controller: controller,
+                itemCount: OnBoardingModel.onBoardingScreens.length,
+                itemBuilder: (context, index) {
+                  return Column(children: [
+                    SizedBox(
+                      height: height * .12,
+                    ),
+                    CircleAvatar(
+                      radius: width * .43,
+                      child: Image.asset(
+                          OnBoardingModel.onBoardingScreens[index].imagePath),
+                    ),
+                    SizedBox(
+                      height: height * .1,
+                    ),
+                    Text(
+                      OnBoardingModel.onBoardingScreens[index].title,
+                      style: AppTextStyle.styleRegular28,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: width * .85,
+                      child: Text(
+                        OnBoardingModel.onBoardingScreens[index].subTitle,
+                        style: AppTextStyle.styleRegular15,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    SizedBox(
+                      width: width * .8,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          index == 2
+                              ? Navigator.pushReplacementNamed(
+                                  context, JoinUsScreen.routeName)
+                              : controller.nextPage(
+                                  duration: const Duration(milliseconds: 150),
+                                  curve: Curves.bounceOut);
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.greenColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 20),
+                          child: Text(
+                            OnBoardingModel.onBoardingScreens[index].nextBottom,
+                            style: AppTextStyle.styleRegular28
+                                .copyWith(fontSize: 18, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        controller.jumpToPage(2);
+                      },
+                      child: Text(
+                        OnBoardingModel.onBoardingScreens[index].skip,
+                        style: AppTextStyle.styleRegular15,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    )
+                  ]);
+                }))
+      ])
+    ])));
+  }
+}
