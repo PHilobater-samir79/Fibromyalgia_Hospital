@@ -53,7 +53,7 @@ class Custom4DigitContainer extends StatelessWidget {
                 length: 4,
                 width: MediaQuery.of(context).size.width,
                 fieldWidth: 60,
-                style: TextStyle(
+                style:const TextStyle(
                   fontSize: 20,
                   color: AppColors.greenColor,
                   fontWeight: FontWeight.w500,

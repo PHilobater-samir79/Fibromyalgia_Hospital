@@ -1,4 +1,16 @@
+import 'package:fibromyalgia_hospital/screens/ui/all_records_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/edit_name_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/find_doctors_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/help_center_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/initial_pages/views/on_boarding_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/location_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/medical_records_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/my_doctors_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/ordars_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patients_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/profile_doctor_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/profile_patient_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/setting_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
@@ -20,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, OnBoardingScreen.routeName);
+      Navigator.pushNamed(context, SettingScreen.routeName);
     });
   }
 

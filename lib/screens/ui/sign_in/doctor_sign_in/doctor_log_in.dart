@@ -25,82 +25,84 @@ class DoctorLogIn extends StatelessWidget {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(right: 15, left: 15),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: height * .18,
-                  ),
-                  Text(
-                    AppStrings.welcomeBack,
-                    style: AppTextStyle.styleRegular28.copyWith(fontSize: 25),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    AppStrings.patientSignUpDesc,
-                    style: AppTextStyle.styleRegular15,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: height * .05,
-                  ),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          onTap:(){} ,
-                          child: const CustomSocialMediaSign(
-                              text: AppStrings.google, image: AppAssets.google),
-                        ),
-                        GestureDetector(
-                          onTap: (){},
-                          child: const CustomSocialMediaSign(
-                              text: AppStrings.facebook,
-                              image: AppAssets.facebook),
-                        ),
-                      ],
+              child: ListView(
+                children:[ Column(
+                  children: [
+                    SizedBox(
+                      height: height * .18,
                     ),
-                  ),
-                  SizedBox(
-                    height: height * .02,
-                  ),
-                  const CustomTextField(text: AppStrings.email),
-                  const SizedBox(height: 10,),
-                  const CustomTextField(text: AppStrings.password,isPass: true,),
-                  SizedBox(height: height*.05,),
-                  const CustomElevatedButton(text: AppStrings.login),
-                  const SizedBox(height: 10,),
-                  TextButton(
-                    onPressed: (){
-                      showModalBottomSheet(
-                        context: context,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(40),
-                            topRight: Radius.circular(40),
+                    Text(
+                      AppStrings.welcomeBack,
+                      style: AppTextStyle.styleRegular28.copyWith(fontSize: 25),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      AppStrings.patientSignUpDesc,
+                      style: AppTextStyle.styleRegular15,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: height * .05,
+                    ),
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap:(){} ,
+                            child: const CustomSocialMediaSign(
+                                text: AppStrings.google, image: AppAssets.google),
                           ),
-                        ),
-                        builder: (context) {
-                          return const CustomForgetPassContainer();
-                        },
-                      );
-                    },
-                    child: Text(AppStrings.forgotPassword,
-                      style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
-                    ) ,
-                  ),
-                  const Expanded(child: SizedBox()),
-                  TextButton(
-                    onPressed: (){},
-                    child: Text(AppStrings.doNotHaveAnAccount,
-                      style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
-                    ) ,
-                  ),
+                          GestureDetector(
+                            onTap: (){},
+                            child: const CustomSocialMediaSign(
+                                text: AppStrings.facebook,
+                                image: AppAssets.facebook),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * .02,
+                    ),
+                    const CustomTextField(text: AppStrings.email),
+                    const SizedBox(height: 10,),
+                    const CustomTextField(text: AppStrings.password,isPass: true,),
+                    SizedBox(height: height*.05,),
+                    const CustomElevatedButton(text: AppStrings.login),
+                    const SizedBox(height: 10,),
+                    TextButton(
+                      onPressed: (){
+                        showModalBottomSheet(
+                          context: context,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40),
+                            ),
+                          ),
+                          builder: (context) {
+                            return const CustomForgetPassContainer();
+                          },
+                        );
+                      },
+                      child: Text(AppStrings.forgotPassword,
+                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
+                      ) ,
+                    ),
+                    const Expanded(child: SizedBox()),
+                    TextButton(
+                      onPressed: (){},
+                      child: Text(AppStrings.doNotHaveAnAccount,
+                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
+                      ) ,
+                    ),
 
-                ],
-              ),
+                  ],
+                ),
+              ]),
             ),
           )
         ],

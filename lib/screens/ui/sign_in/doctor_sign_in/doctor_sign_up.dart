@@ -28,95 +28,97 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           const CustomBackground(),
           Center(
             child: Padding(
               padding: const EdgeInsets.only(right: 15, left: 15),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: height * .18,
-                  ),
-                  Text(
-                    AppStrings.doctorSignUpTitle,
-                    style: AppTextStyle.styleRegular28.copyWith(fontSize: 25),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    AppStrings.patientSignUpDesc,
-                    style: AppTextStyle.styleRegular15,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: height * .05,
-                  ),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: ListView(
+                children:[ Column(
+                  children: [
+                    SizedBox(
+                      height: height * .18,
+                    ),
+                    Text(
+                      AppStrings.doctorSignUpTitle,
+                      style: AppTextStyle.styleRegular28.copyWith(fontSize: 25),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      AppStrings.patientSignUpDesc,
+                      style: AppTextStyle.styleRegular15,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: height * .05,
+                    ),
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap:(){} ,
+                            child: const CustomSocialMediaSign(
+                                text: AppStrings.google, image: AppAssets.google),
+                          ),
+                          GestureDetector(
+                            onTap: (){},
+                            child: const CustomSocialMediaSign(
+                                text: AppStrings.facebook,
+                                image: AppAssets.facebook),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * .02,
+                    ),
+                    const CustomTextField(text: AppStrings.name),
+                    const SizedBox(height: 10,),
+                    const CustomTextField(text: AppStrings.email),
+                    const SizedBox(height: 10,),
+                    const CustomTextField(text: AppStrings.password,isPass: true,),
+                    const SizedBox(height: 10,),
+                    Row(
                       children: [
-                        GestureDetector(
-                          onTap:(){} ,
-                          child: const CustomSocialMediaSign(
-                              text: AppStrings.google, image: AppAssets.google),
+                        Checkbox(value: currentBool, onChanged: (newValue){
+                          setState(() {
+                            currentBool = newValue! ;
+                          });
+                        },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40)
+                          ),
+                          activeColor: AppColors.greenColor,
+
                         ),
-                        GestureDetector(
-                          onTap: (){},
-                          child: const CustomSocialMediaSign(
-                              text: AppStrings.facebook,
-                              image: AppAssets.facebook),
+                        Text(
+                          AppStrings.terms,
+                          style: AppTextStyle.styleRegular15.copyWith(fontSize: 12),
                         ),
+
+
+
                       ],
                     ),
-                  ),
-                  SizedBox(
-                    height: height * .02,
-                  ),
-                  const CustomTextField(text: AppStrings.name),
-                  const SizedBox(height: 10,),
-                  const CustomTextField(text: AppStrings.email),
-                  const SizedBox(height: 10,),
-                  const CustomTextField(text: AppStrings.password,isPass: true,),
-                  const SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      Checkbox(value: currentBool, onChanged: (newValue){
-                        setState(() {
-                          currentBool = newValue! ;
-                        });
+                    SizedBox(height: height*.06,),
+                    const CustomElevatedButton(text: AppStrings.signup),
+                    TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, DoctorLogIn.routeName);
                       },
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40)
-                        ),
-                        activeColor: AppColors.greenColor,
-
-                      ),
-                      Text(
-                        AppStrings.terms,
-                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 12),
-                      ),
-
-
-
-                    ],
-                  ),
-                  SizedBox(height: height*.06,),
-                  const CustomElevatedButton(text: AppStrings.signup),
-                  TextButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, DoctorLogIn.routeName);
-                    },
-                    child: Text(AppStrings.haveAnAccount,
-                      style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
-                    ) ,
-                  ),
-                  const SizedBox(height: 5,)
-                ],
-              ),
+                      child: Text(AppStrings.haveAnAccount,
+                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
+                      ) ,
+                    ),
+                    const SizedBox(height: 5,)
+                  ],
+                ),
+              ]),
             ),
           )
         ],

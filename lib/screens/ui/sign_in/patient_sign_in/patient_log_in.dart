@@ -94,7 +94,7 @@ class PatientLogIn extends StatelessWidget {
                           ),
                         ),
                         builder: (context) {
-                          return const CustomForgetPassContainer();
+                          return const CustomResetPasswordContainer();
                         },
                       );
                     },

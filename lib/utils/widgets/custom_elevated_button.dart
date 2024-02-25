@@ -16,7 +16,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: ElevatedButton(
-          onPressed: (){},
+          onPressed: onTap,
           style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.greenColor,
               shape:

@@ -1,3 +1,4 @@
+import 'package:fibromyalgia_hospital/screens/ui/custom_add_record_show_model.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
@@ -8,11 +9,15 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MedicalRecordsScreen extends StatelessWidget {
+class MedicalRecordsScreen extends StatefulWidget {
   const MedicalRecordsScreen({super.key});
   static const String routeName = 'MedicalRecordsScreen';
 
+  @override
+  State<MedicalRecordsScreen> createState() => _MedicalRecordsScreenState();
+}
 
+class _MedicalRecordsScreenState extends State<MedicalRecordsScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -68,7 +73,20 @@ class MedicalRecordsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const CustomElevatedButton(text: AppStrings.addRecord)
+                CustomElevatedButton(text: AppStrings.addRecord,onTap: (){
+                  showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
+                      ),
+                    ),
+                    builder: (context) {
+                      return const CustomAddRecordShowModel();
+                    },
+                  );
+                },)
               ],
             )
           ],
