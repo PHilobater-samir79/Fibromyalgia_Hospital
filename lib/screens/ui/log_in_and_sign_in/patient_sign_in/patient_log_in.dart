@@ -1,17 +1,19 @@
-import 'package:fibromyalgia_hospital/screens/ui/sign_in/widgets/Custom_social_media_sign.dart';
-import 'package:fibromyalgia_hospital/screens/ui/sign_in/widgets/custom_Text_field.dart';
-import 'package:fibromyalgia_hospital/screens/ui/sign_in/widgets/custom_forget_password_container.dart';
+import 'package:fibromyalgia_hospital/screens/general_patient_home_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign_in/patient_sign_up.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_reset_password_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-class DoctorLogIn extends StatelessWidget {
-  const DoctorLogIn({super.key});
-  static const String routeName = 'DoctorLogIn' ;
+class PatientLogIn extends StatelessWidget {
+  const PatientLogIn({super.key});
+  static const String routeName = 'PatientLogIn';
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +27,8 @@ class DoctorLogIn extends StatelessWidget {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(right: 15, left: 15),
-              child: ListView(
-                children:[ Column(
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
                     SizedBox(
                       height: height * .18,
@@ -51,12 +53,13 @@ class DoctorLogIn extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap:(){} ,
+                            onTap: () {},
                             child: const CustomSocialMediaSign(
-                                text: AppStrings.google, image: AppAssets.google),
+                                text: AppStrings.google,
+                                image: AppAssets.google),
                           ),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: () {},
                             child: const CustomSocialMediaSign(
                                 text: AppStrings.facebook,
                                 image: AppAssets.facebook),
@@ -68,13 +71,24 @@ class DoctorLogIn extends StatelessWidget {
                       height: height * .02,
                     ),
                     const CustomTextField(text: AppStrings.email),
-                    const SizedBox(height: 10,),
-                    const CustomTextField(text: AppStrings.password,isPass: true,),
-                    SizedBox(height: height*.05,),
-                    const CustomElevatedButton(text: AppStrings.login),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const CustomTextField(
+                      text: AppStrings.password,
+                      isPass: true,
+                    ),
+                    SizedBox(
+                      height: height * .05,
+                    ),
+                     CustomButton(text: AppStrings.login,onTap: (){
+                       Navigator.pushNamed(context, GeneralPatientHomeScreen.routeName);
+                     }),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     TextButton(
-                      onPressed: (){
+                      onPressed: () {
                         showModalBottomSheet(
                           context: context,
                           shape: const RoundedRectangleBorder(
@@ -84,25 +98,32 @@ class DoctorLogIn extends StatelessWidget {
                             ),
                           ),
                           builder: (context) {
-                            return const CustomForgetPassContainer();
+                            return const CustomResetPasswordContainer();
                           },
                         );
                       },
-                      child: Text(AppStrings.forgotPassword,
-                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
-                      ) ,
+                      child: Text(
+                        AppStrings.forgotPassword,
+                        style: AppTextStyle.styleRegular15.copyWith(
+                            fontSize: 14, color: AppColors.greenColor),
+                      ),
                     ),
-                    const Expanded(child: SizedBox()),
+                    SizedBox(
+                      height: height * .1,
+                    ),
                     TextButton(
-                      onPressed: (){},
-                      child: Text(AppStrings.doNotHaveAnAccount,
-                        style: AppTextStyle.styleRegular15.copyWith(fontSize: 14,color: AppColors.greenColor),
-                      ) ,
+                      onPressed: () {
+                        Navigator.pushNamed(context, PatientSignUp.routeName);
+                      },
+                      child: Text(
+                        AppStrings.doNotHaveAnAccount,
+                        style: AppTextStyle.styleRegular15.copyWith(
+                            fontSize: 14, color: AppColors.greenColor),
+                      ),
                     ),
-
                   ],
                 ),
-              ]),
+              ),
             ),
           )
         ],
@@ -110,4 +131,3 @@ class DoctorLogIn extends StatelessWidget {
     );
   }
 }
-

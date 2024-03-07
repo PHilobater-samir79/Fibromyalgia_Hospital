@@ -6,7 +6,7 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/styles/Text_style/app_textstyle.dart';
+import '../../utils/styles/Text_style/app_text_style.dart';
 
 class AllRecordsScreen extends StatelessWidget {
   const AllRecordsScreen({super.key});
@@ -53,7 +53,7 @@ class AllRecordsScreen extends StatelessWidget {
                 const SizedBox(height: 10,),
                 const Padding(
                   padding:  EdgeInsets.only(bottom: 20.0),
-                  child: CustomElevatedButton(text: AppStrings.addRecord),
+                  child: CustomButton(text: AppStrings.addRecord),
                 ),
               ],
             )

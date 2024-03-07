@@ -27,4 +27,14 @@ class AppAssets {
       'assets/images/circular_doctor_photo.png';
   static const String circlePatientPhoto =
       'assets/images/circle_patient_photo.png';
+
+  static const String pharmaPhoto =
+      'assets/images/pharma_photo.png';
+
+  static const String largeDoctorPhoto =
+      'assets/images/large_doctor_photo.png';
+
+
+
+
 }

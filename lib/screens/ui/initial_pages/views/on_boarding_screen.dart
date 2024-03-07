@@ -1,9 +1,6 @@
-import 'package:fibromyalgia_hospital/screens/ui/enable_location_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/initial_pages/data/onBoarding_model.dart';
-import 'package:fibromyalgia_hospital/screens/ui/medical_records_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/my_cart_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/sign_in/join_us_screen.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_screen.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +65,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           OnBoardingModel.onBoardingScreens[index].imagePath),
                     ),
                     SizedBox(
-                      height: height * .1,
+                      height: height * .08,
                     ),
                     Text(
                       OnBoardingModel.onBoardingScreens[index].title,

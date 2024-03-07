@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';

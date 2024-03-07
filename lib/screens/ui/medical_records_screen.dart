@@ -1,6 +1,6 @@
 import 'package:fibromyalgia_hospital/screens/ui/custom_add_record_show_model.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
@@ -73,7 +73,7 @@ class _MedicalRecordsScreenState extends State<MedicalRecordsScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                CustomElevatedButton(text: AppStrings.addRecord,onTap: (){
+                CustomButton(text: AppStrings.addRecord,onTap: (){
                   showModalBottomSheet(
                     context: context,
                     shape: const RoundedRectangleBorder(

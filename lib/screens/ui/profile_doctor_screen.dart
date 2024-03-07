@@ -1,6 +1,6 @@
 import 'package:fibromyalgia_hospital/screens/ui/custom_profile_text_field.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
@@ -115,7 +115,7 @@ class ProfileDoctorScreen extends StatelessWidget {
                       SizedBox(height: 10,),
                       CustomProfileTextField(icon: Iconsax.document_text,labelName: AppStrings.addBiography),
                       SizedBox(height: 10,),
-                      Center(child: CustomElevatedButton(text: AppStrings.continueText)),
+                      Center(child: CustomButton(text: AppStrings.continueText)),
                     ],
                   ),
                 )

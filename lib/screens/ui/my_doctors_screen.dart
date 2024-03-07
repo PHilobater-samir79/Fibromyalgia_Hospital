@@ -1,16 +1,30 @@
-import 'package:fibromyalgia_hospital/screens/ui/custom_find_doctors_container.dart';
 import 'package:fibromyalgia_hospital/screens/ui/custom_my_doctors_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/custom_search_docrors_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 
-class MyDoctorsScreen extends StatelessWidget {
+class MyDoctorsScreen extends StatefulWidget {
   const MyDoctorsScreen({super.key});
-  static const String routeName = 'MyDoctorsScreen' ;
+  static const String routeName = 'MyDoctorsScreen';
+
+  @override
+  State<MyDoctorsScreen> createState() => _MyDoctorsScreenState();
+}
+
+class _MyDoctorsScreenState extends State<MyDoctorsScreen>
+    with SingleTickerProviderStateMixin {
+  TabController? tabController;
+
+  @override
+  void initState() {
+    tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,19 +61,60 @@ class MyDoctorsScreen extends StatelessWidget {
                   ),
                   const CustomSearchBar(),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   Expanded(
-                    child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return const Padding(
-                          padding:  EdgeInsets.only(bottom: 10.0),
-                          child:  CustomMyDoctorsContainer(),
-                        ) ;
-                      },),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        TabBar(
+                          unselectedLabelColor: AppColors.greyTextColor,
+                          labelColor: AppColors.blackTextColor,
+                          indicatorColor: AppColors.greenColor,
+                          isScrollable: true,
+                          tabs: const [
+                            Tab(
+                              text: 'Booked',
+                            ),
+                            Tab(
+                              text: 'Favourite',
+                            ),
+                          ],
+                          controller: tabController,
+                          indicatorSize: TabBarIndicatorSize.tab,
+                        ),
+                        Expanded(
+                          child: TabBarView(
+                            controller: tabController,
+                            children: [
+                              Center(
+                                child: Expanded(
+                                  child: ListView.builder(
+                                    itemCount: 5,
+                                    itemBuilder: (context, index) {
+                                      return const Padding(
+                                        padding: EdgeInsets.only(bottom: 10.0),
+                                        child: CustomMyDoctorsContainer(),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                  child: Expanded(
+                                child: ListView.builder(
+                                  itemCount: 10,
+                                  itemBuilder: (context, index) {
+                                    return const CustomSearchDoctorsContainer();
+                                  },
+                                ),
+                              )),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-
                 ],
               ),
             )

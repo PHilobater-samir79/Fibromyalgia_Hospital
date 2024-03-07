@@ -1,24 +1,18 @@
-import 'package:fibromyalgia_hospital/screens/ui/sign_in/widgets/custom_Text_field.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-class CustomForgetPassContainer extends StatefulWidget {
-  const CustomForgetPassContainer({super.key});
+class CustomResetPasswordContainer extends StatelessWidget {
+  const CustomResetPasswordContainer({super.key});
 
-  @override
-  State<CustomForgetPassContainer> createState() =>
-      _CustomForgetPassContainerState();
-}
-
-class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height * .45,
+      height: height * .55,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -36,7 +30,7 @@ class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
             const Padding(
               padding: EdgeInsets.only(top: 50.0),
               child: Text(
-                AppStrings.forgotPassword,
+                AppStrings.resetPassword,
                 style: AppTextStyle.styleRegular25,
               ),
             ),
@@ -44,7 +38,7 @@ class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
               height: 10,
             ),
             Text(
-              AppStrings.forgetPasswordDesc,
+              AppStrings.resetPasswordDesc,
               style: AppTextStyle.styleRegular15
                   .copyWith(fontWeight: FontWeight.w500),
               textAlign: TextAlign.start,
@@ -52,13 +46,15 @@ class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
             const SizedBox(
               height: 25,
             ),
-            const CustomTextField(text: AppStrings.email),
+            const CustomTextField(text: AppStrings.newPassword,isPass: true,),
+            const SizedBox(height: 5,),
+            const CustomTextField(text: AppStrings.reEnterPassword,isPass: true,),
             const SizedBox(
               height: 30,
             ),
             const Center(
-                child: CustomElevatedButton(
-              text: AppStrings.continueText,
+                child: CustomButton(
+              text: AppStrings.updatePassword,
             )),
           ],
         ),

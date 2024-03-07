@@ -1,0 +1,52 @@
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
+import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
+import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
+import 'package:flutter/material.dart';
+
+class CustomPatientAppointmentContainer extends StatelessWidget {
+  const CustomPatientAppointmentContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Container(
+        width: width,
+        height: height * .1,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12),
+            bottomLeft: Radius.circular(12),
+          ),
+        ),
+        child: Center(
+          child: ListTile(
+            leading: Image.asset(AppAssets.circlePatientPhoto),
+            title: Text(
+              'Ahmed Khaled',
+              style: AppTextStyle.styleMedium18,
+            ),
+            subtitle: Text(
+              'Online Consultation',
+              style: AppTextStyle.styleRegular15,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            trailing: Container(
+              height: height*.05,
+              width: width*.2,
+              decoration: BoxDecoration(
+                color: AppColors.greenColor,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Center(child: Text('2:00 PM',style: AppTextStyle.styleRegular15.copyWith(color: AppColors.whiteColor),)),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -2,10 +2,10 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomProfileTextField extends StatelessWidget {
-  final String labelName ;
+  final String? labelName ;
   final IconData icon ;
 
-  const CustomProfileTextField({super.key, required this.labelName, required this.icon});
+  const CustomProfileTextField({super.key, this.labelName, required this.icon});
 
   @override
   Widget build(BuildContext context) {

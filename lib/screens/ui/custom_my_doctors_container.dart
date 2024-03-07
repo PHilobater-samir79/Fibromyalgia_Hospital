@@ -1,5 +1,5 @@
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
-import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_textstyle.dart';
+import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
@@ -80,7 +80,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
                     ),
                   ),
                 ),
-                IconButton(onPressed: (){}, icon:const Icon(Iconsax.heart,color: Colors.red,))
+                IconButton(onPressed: (){}, icon:const Icon(Iconsax.heart,))
               ],
             ),
             const SizedBox(height: 10,),
@@ -99,7 +99,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
             const SizedBox(height: 20,),
             SizedBox(
                 width: width,
-                child: CustomElevatedButton(text: AppStrings.booked))
+                child: CustomButton(text: AppStrings.booked))
 
           ],
         ),
