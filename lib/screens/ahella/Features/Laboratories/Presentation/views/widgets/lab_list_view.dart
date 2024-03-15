@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+import 'package:medical_app/Features/Laboratories/Data/Models/lab_model.dart';
+
+import 'lab_item.dart';
+
+class LabListView extends StatelessWidget {
+  const LabListView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      separatorBuilder: (context, index) => const SizedBox(height: 12),
+      itemBuilder: (context, index) => LabItem(
+        labModel: LabModel.labs[index],
+      ),
+      itemCount: LabModel.labs.length,
+    );
+  }
+}

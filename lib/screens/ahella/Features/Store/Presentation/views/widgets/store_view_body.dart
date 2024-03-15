@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:medical_app/Core/widgets/custom_header_section.dart';
+import 'package:medical_app/Core/widgets/custom_text_form_field.dart';
+import 'package:medical_app/Features/Store/Presentation/views/widgets/store_categories_section.dart';
+import 'package:medical_app/Features/Store/Presentation/views/widgets/store_list_view.dart';
+
+class StoreViewBody extends StatelessWidget {
+  const StoreViewBody({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomHeaderSection(title: 'Store', onTap: () {}),
+        const SizedBox(height: 34),
+        const CustomTextFormField(
+          suffixIcon: Icon(Icons.close),
+          prefixIcon: Icon(Icons.search_rounded),
+          hintText: 'Search',
+          keyboardType: TextInputType.text,
+        ),
+        const SizedBox(height: 18),
+        const StoreCategoriesSection(),
+        const SizedBox(height: 8),
+        const Expanded(child: StoreListView()),
+      ],
+    );
+  }
+}

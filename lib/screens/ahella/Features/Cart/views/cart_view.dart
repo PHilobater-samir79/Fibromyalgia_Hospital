@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+import 'package:medical_app/Core/widgets/scaffold_background.dart';
+import 'widgets/cart_view_body.dart';
+
+class CartView extends StatelessWidget {
+  const CartView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: ScaffoldBackground(
+        child: SizedBox(
+          height: double.infinity,
+          child: SafeArea(
+            child: CartViewBody(),
+          ),
+        ),
+      ),
+    );
+  }
+}
