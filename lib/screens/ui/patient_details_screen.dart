@@ -17,10 +17,7 @@ class PatientDetailsScreen extends StatefulWidget {
 }
 
 class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
-Object? val = -1 ;
-
-
-
+  Object? val = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +58,9 @@ Object? val = -1 ;
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: AppColors.whiteColor),
-                    child:  Padding(
-                      padding:const  EdgeInsets.only(top: 50.0, right: 10, left: 10),
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 50.0, right: 10, left: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -78,7 +76,6 @@ Object? val = -1 ;
                           const SizedBox(
                             height: 20,
                           ),
-
                           const Text(
                             'Gander',
                             style: AppTextStyle.styleMedium18,
@@ -94,48 +91,63 @@ Object? val = -1 ;
                                       value: 'male',
                                       activeColor: AppColors.greenColor,
                                       groupValue: val,
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
-                                          val = value ;
+                                          val = value;
                                         });
                                       }),
-                                  Text('Male',style:  AppTextStyle.styleRegular15.copyWith(color: AppColors.blackTextColor,fontWeight: FontWeight.bold),),
-
+                                  Text(
+                                    'Male',
+                                    style: AppTextStyle.styleRegular15.copyWith(
+                                        color: AppColors.blackTextColor,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
-                              const SizedBox(width: 5,),
+                              const SizedBox(
+                                width: 5,
+                              ),
                               Row(
                                 children: [
                                   Radio(
                                       value: 'female',
                                       activeColor: AppColors.greenColor,
                                       groupValue: val,
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
-                                          val = value ;
+                                          val = value;
                                         });
                                       }),
-                                  Text('Female',style:  AppTextStyle.styleRegular15.copyWith(color: AppColors.blackTextColor,fontWeight: FontWeight.bold),),
-
+                                  Text(
+                                    'Female',
+                                    style: AppTextStyle.styleRegular15.copyWith(
+                                        color: AppColors.blackTextColor,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
-                              const SizedBox(width: 5,),
+                              const SizedBox(
+                                width: 5,
+                              ),
                               Row(
                                 children: [
                                   Radio(
                                       value: 'others',
                                       activeColor: AppColors.greenColor,
                                       groupValue: val,
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
-                                          val = value ;
+                                          val = value;
                                         });
                                       }),
-                                  Text('Others',style:  AppTextStyle.styleRegular15.copyWith(color: AppColors.blackTextColor,fontWeight: FontWeight.bold),),
-
+                                  Text(
+                                    'Others',
+                                    style: AppTextStyle.styleRegular15.copyWith(
+                                        color: AppColors.blackTextColor,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
-
                             ],
                           ),
                           const SizedBox(
@@ -147,28 +159,20 @@ Object? val = -1 ;
                           const SizedBox(
                             height: 20,
                           ),
-                          const  CustomProfileTextField(
+                          const CustomProfileTextField(
                               icon: Icons.email, labelName: AppStrings.email),
                           const SizedBox(
                             height: 20,
                           ),
-                          const SizedBox(width: 10,)
-
-
-
-
-
-
-
-
-
+                          const SizedBox(
+                            width: 10,
+                          )
                         ],
                       ),
                     ),
                   ),
                   const Expanded(
-                    child:  SizedBox(
-                    ),
+                    child: SizedBox(),
                   ),
                   const CustomButton(text: AppStrings.continueText),
                   const SizedBox(

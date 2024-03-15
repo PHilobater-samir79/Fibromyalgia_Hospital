@@ -1,10 +1,14 @@
+import 'package:fibromyalgia_hospital/core/local_database/catch_helper.dart';
 import 'package:fibromyalgia_hospital/screens/ui/initial_pages/views/on_boarding_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../core/local_database/services_locator.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,11 +19,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushNamed(context, OnBoardingScreen.routeName);
+    navigator();
+  }
+
+  void navigator() {
+    bool isVisited = getIt<CacheHelper>().getData(key: 'isVisited') ?? false;
+    Future.delayed(const Duration(seconds: 5), () {
+      isVisited
+          ? Navigator.pushReplacementNamed(context, JoinUsScreen.routeName)
+          : Navigator.pushReplacementNamed(context, OnBoardingScreen.routeName);
     });
   }
 

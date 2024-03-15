@@ -1,13 +1,12 @@
-import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/doctor_details/doctor_details_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/enable_location_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
 
-class CustomSearchDoctorsContainer extends StatelessWidget {
-  const CustomSearchDoctorsContainer({super.key});
+class CustomPharmaContainer extends StatelessWidget {
+  const CustomPharmaContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class CustomSearchDoctorsContainer extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8.0),
       child: InkWell(
         onTap: (){
-          Navigator.pushNamed(context, DoctorDetailsScreen.routeName);
+          Navigator.pushNamed(context, EnableLocationScreen.routeName);
         },
         child: Container(
           width: width,
-          height: height * .15,
+          height: height * .16,
           decoration: BoxDecoration(
               color: AppColors.whiteColor,
               borderRadius: BorderRadius.circular(12)),
@@ -35,7 +34,7 @@ class CustomSearchDoctorsContainer extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Image.asset(AppAssets.doctorPhoto),
+                  child: Image.asset(AppAssets.pharmaPhoto),
                 ),
                 const SizedBox(
                   width: 10,
@@ -43,38 +42,39 @@ class CustomSearchDoctorsContainer extends StatelessWidget {
                 SizedBox(
                   width: width * .551,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 3.0),
+                    padding: const EdgeInsets.only(top: 10.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            const Text(
-                              'Dr. Pediatrician',
-                              style: AppTextStyle.styleMedium18,
-                            ),
-                            const Expanded(child: SizedBox()),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Iconsax.heart,
-                                  color: Colors.red,
-                                ))
-                          ],
+                        const Text(
+                          'El-Ezaby Pharmacy',
+                          style: AppTextStyle.styleMedium18,
+                        ),
+                        const SizedBox(
+                          height: 3,
                         ),
                         const Text(
-                          'Specialist Cardiologist',
+                          'Central Spine, Area 101 3rd District, First Neighbourhood,Giza',
+                          maxLines: 2,
+                          style: AppTextStyle.styleRegular15,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          '02 35317347',
                           style: AppTextStyle.styleRegular15,
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 3,
                         ),
                         Row(
                           children: [
                             RatingBar.builder(
                               itemSize: 20,
-                              initialRating: 1,
+                              initialRating: 3,
                               minRating: 0,
                               direction: Axis.horizontal,
                               allowHalfRating: true,

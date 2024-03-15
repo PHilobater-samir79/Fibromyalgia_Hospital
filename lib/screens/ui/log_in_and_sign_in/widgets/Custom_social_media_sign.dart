@@ -3,11 +3,11 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomSocialMediaSign extends StatelessWidget {
+class CustomSocialMediaContainer extends StatelessWidget {
   final String text;
   final String image;
 
-  const CustomSocialMediaSign(
+  const CustomSocialMediaContainer(
       {super.key, required this.text, required this.image});
 
   @override

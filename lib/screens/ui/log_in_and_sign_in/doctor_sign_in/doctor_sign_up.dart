@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/screens/general_doctor_home_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/doctor/general_doctor_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/doctor_sign_in/doctor_log_in.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
@@ -61,13 +61,13 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                         children: [
                           GestureDetector(
                             onTap: () {},
-                            child: const CustomSocialMediaSign(
+                            child: const CustomSocialMediaContainer(
                                 text: AppStrings.google,
                                 image: AppAssets.google),
                           ),
                           GestureDetector(
                             onTap: () {},
-                            child: const CustomSocialMediaSign(
+                            child: const CustomSocialMediaContainer(
                                 text: AppStrings.facebook,
                                 image: AppAssets.facebook),
                           ),

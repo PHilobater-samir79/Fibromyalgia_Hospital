@@ -1,3 +1,5 @@
+import 'package:fibromyalgia_hospital/core/local_database/catch_helper.dart';
+import 'package:fibromyalgia_hospital/core/local_database/services_locator.dart';
 import 'package:fibromyalgia_hospital/screens/ui/initial_pages/data/onBoarding_model.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
@@ -86,13 +88,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     SizedBox(
                       width: width * .8,
                       child: ElevatedButton(
-                        onPressed: () {
-                          index == 2
-                              ? Navigator.pushReplacementNamed(
-                                  context, JoinUsScreen.routeName)
-                              : controller.nextPage(
-                                  duration: const Duration(milliseconds: 150),
-                                  curve: Curves.bounceOut);
+                        onPressed: () async {
+                          var saveData = await getIt<CacheHelper>()
+                              .setData(key: 'isVisited', value: true)
+                              .then((value) {
+                            index == 2
+                                ? Navigator.pushReplacementNamed(
+                                context, JoinUsScreen.routeName)
+                                : controller.nextPage(
+                                duration:
+                                const Duration(milliseconds: 1000),
+                                curve: Curves
+                                    .fastEaseInToSlowEaseOut);
+                          });
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.greenColor,

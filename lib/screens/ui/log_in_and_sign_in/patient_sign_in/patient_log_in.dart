@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/screens/general_patient_home_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/general_patient_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign_in/patient_sign_up.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
@@ -54,13 +54,13 @@ class PatientLogIn extends StatelessWidget {
                         children: [
                           GestureDetector(
                             onTap: () {},
-                            child: const CustomSocialMediaSign(
+                            child: const CustomSocialMediaContainer(
                                 text: AppStrings.google,
                                 image: AppAssets.google),
                           ),
                           GestureDetector(
                             onTap: () {},
-                            child: const CustomSocialMediaSign(
+                            child: const CustomSocialMediaContainer(
                                 text: AppStrings.facebook,
                                 image: AppAssets.facebook),
                           ),
