@@ -1,6 +1,6 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentation/views/payment_options_view.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/Core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/Features/Payment/Presentation/views/payment_options_view.dart';
 
 class CartFooterSection extends StatelessWidget {
   const CartFooterSection({

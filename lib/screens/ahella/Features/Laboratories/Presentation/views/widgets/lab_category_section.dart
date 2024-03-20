@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Core/theming/my_colors.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
+
 
 class LabCategorySection extends StatelessWidget {
   const LabCategorySection({

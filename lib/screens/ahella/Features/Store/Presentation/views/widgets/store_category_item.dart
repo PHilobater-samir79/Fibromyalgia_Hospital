@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medical_app/Core/theming/my_colors.dart';
-import 'package:medical_app/Features/Store/Presentation/Manager/cubit/store_cubit.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
+
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/Manager/cubit/store_cubit.dart';
 
 class StoreCategoryItem extends StatelessWidget {
   const StoreCategoryItem({

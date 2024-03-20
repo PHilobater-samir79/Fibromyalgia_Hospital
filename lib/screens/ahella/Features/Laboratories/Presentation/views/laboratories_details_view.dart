@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Core/widgets/scaffold_background.dart';
-import 'package:medical_app/Features/Laboratories/Data/Models/lab_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/scaffold_background.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Data/Models/lab_model.dart';
 
 import 'widgets/laboratories_details_view_body.dart';
 

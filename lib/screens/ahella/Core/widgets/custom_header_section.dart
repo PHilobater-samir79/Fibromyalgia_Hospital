@@ -17,11 +17,11 @@ class CustomHeaderSection extends StatelessWidget {
       padding: const EdgeInsets.only(top: 12),
       child: Row(
         children: [
-          GestureDetector(
-            onTap: onTap,
-            child: SvgPicture.asset('assets/images/back.svg'),
-          ),
-          const SizedBox(width: 20),
+          // GestureDetector(
+          //   onTap: onTap,
+          //   child: SvgPicture.asset('assets/ahella/back.svg'),
+          // ),
+          // const SizedBox(width: 20),
           Text(
             title,
             style: const TextStyle(

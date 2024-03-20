@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Features/Laboratories/Data/Models/lab_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Data/Models/lab_model.dart';
 
 import 'lab_item.dart';
 

@@ -1,6 +1,7 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/Core/theming/my_colors.dart';
+
 
 class CartDetailsSection extends StatelessWidget {
   const CartDetailsSection({super.key});

@@ -24,9 +24,9 @@ class StoreModel {
           'a thin wearable medical device that is inserted into a soft band, a disposable electrode is attached and then the band is placed on the upper calf. It is easy to use, wear and forget technology',
       price: 1600,
       images: [
-        'assets/images/store/1-1.png',
-        'assets/images/store/1-2.png',
-        'assets/images/store/1-3.png',
+        'assets/ahella/1-1.png',
+        'assets/ahella/1-2.png',
+        'assets/ahella/1-3.png',
       ],
     ),
     StoreModel(
@@ -35,9 +35,9 @@ class StoreModel {
           'TENS 7000 Digital TENS Unit with Accessories, Includes 16 Pack Electrodes - TENS Unit Muscle Stimulator for Back Pain Relief, General Pain Relief, Neck Pain, Sciatica Pain Relief, Nerve Pain Relief',
       price: 800,
       images: [
-        'assets/images/store/2-1.png',
-        'assets/images/store/2-2.png',
-        'assets/images/store/2-3.png',
+        'assets/ahella/2-1.png',
+        'assets/ahella/2-2.png',
+        'assets/ahella/2-3.png',
       ],
     ),
     StoreModel(
@@ -46,9 +46,9 @@ class StoreModel {
           'Wearable System Wireless TENS Unit + Muscle Stimulator Combination for Pain Relief, Arthritis, Muscle Conditioning, Muscle Strength',
       price: 200,
       images: [
-        'assets/images/store/3-1.png',
-        'assets/images/store/3-2.png',
-        'assets/images/store/3-3.png',
+        'assets/ahella/3-1.png',
+        'assets/ahella/3-2.png',
+        'assets/ahella/3-3.png',
       ],
     ),
     StoreModel(
@@ -57,8 +57,8 @@ class StoreModel {
           'Gideon Cervical Neck Traction Device –Collar Brace Spine Alignment Instant Relief for Chronic Neck and Shoulder Pain – Great Alternate Pain Relieving Re',
       price: 350,
       images: [
-        'assets/images/store/4-1.png',
-        'assets/images/store/4-2.png',
+        'assets/ahella/4-1.png',
+        'assets/ahella/4-2.png',
       ],
     ),
     StoreModel(
@@ -67,9 +67,9 @@ class StoreModel {
           'Hand Pain Relief Mitten Double Side pad for Sport Pain Fingers',
       price: 400,
       images: [
-        'assets/images/store/5-1.png',
-        'assets/images/store/5-2.png',
-        'assets/images/store/5-3.png',
+        'assets/ahella/5-1.png',
+        'assets/ahella/5-2.png',
+        'assets/ahella/5-3.png',
       ],
     ),
   ];
@@ -81,19 +81,19 @@ class StoreModel {
           'Vaunn Medical Under Desk Bike Pedal Exerciser with Electronic Display for Legs and Arms Workout (Fully Assembled Folding Exercise Pedaler, no Tools Required) ',
       price: 2000,
       images: [
-        'assets/images/store/6-1.png',
-        'assets/images/store/6-2.png',
-        'assets/images/store/6-3.png',
+        'assets/ahella/6-1.png',
+        'assets/ahella/6-2.png',
+        'assets/ahella/6-3.png',
       ],
     ),
     StoreModel(
       name: 'gait belts for sensor with handles widen ',
-      description: 'gait belts for sensor with handles widen transfer',
+      description: 'gait belts for senssor with handles widen transfer',
       price: 500,
       images: [
-        'assets/images/store/7-1.png',
-        'assets/images/store/7-2.png',
-        'assets/images/store/7-3.png',
+        'assets/ahella/7-1.png',
+        'assets/ahella/7-2.png',
+        'assets/ahella/7-3.png',
       ],
     ),
     StoreModel(
@@ -102,9 +102,9 @@ class StoreModel {
           'Foot and Calf Stretching, Pain Relief for Plantar Fasciitis, Achilles Tendonitis, Shin Splints, Increased Flexibility & Strength',
       price: 160,
       images: [
-        'assets/images/store/8-1.png',
-        'assets/images/store/8-2.png',
-        'assets/images/store/8-3.png',
+        'assets/ahella/8-1.png',
+        'assets/ahella/8-2.png',
+        'assets/ahella/8-3.png',
       ],
     ),
     StoreModel(
@@ -113,9 +113,9 @@ class StoreModel {
           'Pulleys for Shoulder Rehab Over Door & Shoulder Pulley for Physical Therapy - Exercise Pulleys for Shoulder Alleviate Shoulder Pain and Recovery',
       price: 300,
       images: [
-        'assets/images/store/9-1.png',
-        'assets/images/store/9-2.png',
-        'assets/images/store/9-3.png',
+        'assets/ahella/9-1.png',
+        'assets/ahella/9-2.png',
+        'assets/ahella/9-3.png',
       ],
     ),
   ];
@@ -127,8 +127,8 @@ class StoreModel {
           'Medline Aluminum Forearm Crutches, 250-lb. Weight Capacity, Tall Adult (5ft. 10in. - 6ft. 6in.), Pack of 2',
       price: 120,
       images: [
-        'assets/images/store/10-1.png',
-        'assets/images/store/10-2.png',
+        'assets/ahella/10-1.png',
+        'assets/ahella/10-2.png',
       ],
     ),
     StoreModel(
@@ -137,8 +137,8 @@ class StoreModel {
           'Easy Single-Handed Application, Adjustable Comfort Fit - Ideal for Post-Surgery, Injury Recovery, and Athletes',
       price: 70,
       images: [
-        'assets/images/store/11-1.png',
-        'assets/images/store/11-2.png',
+        'assets/ahella/11-1.png',
+        'assets/ahella/11-2.png',
       ],
     ),
     StoreModel(
@@ -147,8 +147,8 @@ class StoreModel {
           'Ultra Folding Rollator Walker with Seat 10" Front TPU Soft Wheels, Medical Rollator Walker with Comfort Handles and Foam Padded Backrest & Durable Brakes (Blue)',
       price: 1800,
       images: [
-        'assets/images/store/12-1.png',
-        'assets/images/store/12-2.png',
+        'assets/ahella/12-1.png',
+        'assets/ahella/12-2.png',
       ],
     ),
     StoreModel(
@@ -156,9 +156,9 @@ class StoreModel {
       description: 'for Elderly,Lightweight Metal Bed Foot Stool',
       price: 500,
       images: [
-        'assets/images/store/13-1.png',
-        'assets/images/store/13-2.png',
-        'assets/images/store/13-3.png',
+        'assets/ahella/13-1.png',
+        'assets/ahella/13-2.png',
+        'assets/ahella/13-3.png',
       ],
     ),
   ];

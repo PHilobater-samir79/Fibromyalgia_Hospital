@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Core/theming/my_colors.dart';
-import 'package:medical_app/Features/Store/Data/Models/store_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
+
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Data/Models/store_model.dart';
 
 class AnotherProductsSection extends StatelessWidget {
   const AnotherProductsSection({super.key});

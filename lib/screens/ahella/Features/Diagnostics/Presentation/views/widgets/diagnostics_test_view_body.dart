@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:medical_app/Core/widgets/custom_header_section.dart';
-import 'package:medical_app/Features/Diagnostics/Presentation/views/widgets/diagnostics_list_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Presentation/views/widgets/diagnostics_list_view.dart';
 
 import 'diagnostics_test_details.dart';
 

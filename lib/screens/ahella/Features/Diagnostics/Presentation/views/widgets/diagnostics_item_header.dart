@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Features/Diagnostics/Data/Models/diagnostics_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Data/Models/diagnostics_model.dart';
 
 class DiagnosticsItemHeader extends StatelessWidget {
   const DiagnosticsItemHeader({super.key, required this.diagnosticsModel});

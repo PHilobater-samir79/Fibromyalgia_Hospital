@@ -1,5 +1,5 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Cart/views/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/Features/Cart/views/widgets/cart_item.dart';
 
 class CartItemsSection extends StatelessWidget {
   const CartItemsSection({super.key});

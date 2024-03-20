@@ -1,10 +1,10 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentation/views/widgets/payment_option_is_selected_leading_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/Core/helpers/show_successful_order_dialog.dart';
-import 'package:medical_app/Core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/Core/widgets/custom_header_section.dart';
-import 'package:medical_app/Core/widgets/custom_text_form_field.dart';
-import 'package:medical_app/Features/Payment/Presentation/views/widgets/payment_option_is_selected_leading_icon.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/helpers/show_successful_order_dialog.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_text_form_field.dart';
 
 class CreditDetailsViewBody extends StatelessWidget {
   const CreditDetailsViewBody({
