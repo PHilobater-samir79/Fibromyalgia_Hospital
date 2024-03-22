@@ -1,4 +1,6 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ui/doctor/general_doctor_home_screen.dart';
+import 'package:fibromyalgia_hospital/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,7 +18,7 @@ Future<dynamic> showSuccessfulOrderDialog(BuildContext context) {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SvgPicture.asset('assets/images/like.svg'),
+            SvgPicture.asset('assets/ahella/like.svg'),
             const Text(
               'Thank You !',
               style: TextStyle(
@@ -46,7 +48,16 @@ Future<dynamic> showSuccessfulOrderDialog(BuildContext context) {
             const SizedBox(height: 30),
             SizedBox(
               width: double.infinity,
-              child: CustomElevatedButton(text: 'Done', onPressed: () {}),
+              child: CustomElevatedButton(
+                text: 'Done',
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    routeHomeName,
+                    (route) => false,
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 8),
             TextButton(

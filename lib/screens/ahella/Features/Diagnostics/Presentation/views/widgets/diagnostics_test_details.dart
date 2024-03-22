@@ -17,8 +17,8 @@ class DiagnosticsTestDetails extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       SvgPicture.asset(
-                          'assets/images/free-home-background.svg'),
-                      SvgPicture.asset('assets/images/free-home.svg'),
+                          'assets/ahella/free-home-background.svg'),
+                      SvgPicture.asset('assets/ahella/free-home.svg'),
                     ],
                   ),
                   const SizedBox(width: 8), // SizedBox
@@ -39,8 +39,8 @@ class DiagnosticsTestDetails extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       SvgPicture.asset(
-                          'assets/images/associate-background.svg'),
-                      SvgPicture.asset('assets/images/associate.svg'),
+                          'assets/ahella/associate-background.svg'),
+                      SvgPicture.asset('assets/ahella/associate.svg'),
                     ],
                   ),
                   const SizedBox(width: 8), // SizedBox
@@ -65,8 +65,8 @@ class DiagnosticsTestDetails extends StatelessWidget {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      SvgPicture.asset('assets/images/report-background.svg'),
-                      SvgPicture.asset('assets/images/report.svg'),
+                      SvgPicture.asset('assets/ahella/report-background.svg'),
+                      SvgPicture.asset('assets/ahella/report.svg'),
                     ],
                   ),
                   const SizedBox(width: 8), // SizedBox
@@ -86,8 +86,8 @@ class DiagnosticsTestDetails extends StatelessWidget {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      SvgPicture.asset('assets/images/follow-background.svg'),
-                      SvgPicture.asset('assets/images/follow.svg'),
+                      SvgPicture.asset('assets/ahella/follow-background.svg'),
+                      SvgPicture.asset('assets/ahella/follow.svg'),
                     ],
                   ),
                   const SizedBox(width: 8), // SizedBox

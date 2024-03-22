@@ -36,7 +36,7 @@ class CartViewBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 4),
-                SvgPicture.asset('assets/images/cart.svg')
+                SvgPicture.asset('assets/ahella/cart.svg')
               ],
             ),
           ),

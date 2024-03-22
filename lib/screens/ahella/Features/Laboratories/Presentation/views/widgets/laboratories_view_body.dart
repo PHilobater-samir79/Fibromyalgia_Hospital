@@ -18,7 +18,7 @@ class LaboratoriesViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomHeaderSection(title: 'Laboratories', onTap: () {}),
+            CustomHeaderSection(title: 'Laboratories', onTap:() => Navigator.pop(context)),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),

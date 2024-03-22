@@ -26,7 +26,7 @@ class DiagnosticsModel {
     DiagnosticsModel(
       title: 'Advanced Health Checkup',
       subTitle: 'Ideal for individuals aged 21-40 years',
-      imageUrl: 'assets/images/diagnostics-1.png',
+      imageUrl: 'assets/ahella/diagnostics-1.png',
       offer: '+ 10% Health cashback T&C',
       tests: '69',
       discount: '35% off',
@@ -36,7 +36,7 @@ class DiagnosticsModel {
     DiagnosticsModel(
       title: 'Working Women’s Health Checkup',
       subTitle: 'Ideal for individuals aged 21-40 years',
-      imageUrl: 'assets/images/diagnostics-2.png',
+      imageUrl: 'assets/ahella/diagnostics-2.png',
       offer: '+ 10% Health cashback T&C',
       tests: '119',
       discount: '35% off',
@@ -46,7 +46,7 @@ class DiagnosticsModel {
     DiagnosticsModel(
       title: 'Active Professional Health Checkup',
       subTitle: 'Ideal for individuals aged 21-40 years',
-      imageUrl: 'assets/images/diagnostics-3.png',
+      imageUrl: 'assets/ahella/diagnostics-3.png',
       offer: '+ 10% Health cashback T&C',
       tests: '100',
       discount: '35% off',
