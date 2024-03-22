@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:medical_app/Features/Store/Data/Models/store_model.dart';
-import 'package:medical_app/Features/Store/Presentation/views/equipment_info_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Data/Models/store_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/equipment_info_view.dart';
 
 class StoreListViewItem extends StatelessWidget {
   const StoreListViewItem({

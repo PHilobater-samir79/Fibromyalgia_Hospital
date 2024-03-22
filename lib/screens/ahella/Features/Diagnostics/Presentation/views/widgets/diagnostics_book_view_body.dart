@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/Core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/Core/widgets/custom_header_section.dart';
-import 'package:medical_app/Features/Diagnostics/Presentation/views/diagonstics_tests_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Presentation/views/diagonstics_tests_view.dart';
 
 class DiagnosticsBookViewBody extends StatelessWidget {
   const DiagnosticsBookViewBody({

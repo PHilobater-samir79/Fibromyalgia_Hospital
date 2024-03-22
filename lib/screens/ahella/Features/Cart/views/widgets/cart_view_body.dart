@@ -1,10 +1,11 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Cart/views/widgets/cart_details_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Cart/views/widgets/cart_footer_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Cart/views/widgets/cart_items_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/Core/theming/my_colors.dart';
-import 'package:medical_app/Core/widgets/custom_header_section.dart';
-import 'package:medical_app/Features/Cart/views/widgets/cart_details_section.dart';
-import 'package:medical_app/Features/Cart/views/widgets/cart_footer_section.dart';
-import 'package:medical_app/Features/Cart/views/widgets/cart_items_section.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
+
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:medical_app/Features/Laboratories/Data/Models/lab_model.dart';
-import 'package:medical_app/Features/Laboratories/Presentation/views/laboratories_details_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Data/Models/lab_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_details_view.dart';
 
 class LabItem extends StatelessWidget {
   const LabItem({

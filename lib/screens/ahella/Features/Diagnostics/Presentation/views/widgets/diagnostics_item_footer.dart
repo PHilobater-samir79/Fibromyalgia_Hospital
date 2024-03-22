@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/Core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/Features/Diagnostics/Data/Models/diagnostics_model.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Data/Models/diagnostics_model.dart';
 
 class DiagnosticsItemFooter extends StatelessWidget {
   const DiagnosticsItemFooter({super.key, required this.diagnosticsModel});

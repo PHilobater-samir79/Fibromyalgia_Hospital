@@ -1,3 +1,5 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
 import 'package:fibromyalgia_hospital/screens/ui/medical_all_records_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/my_doctors_screen.dart';
 import 'package:fibromyalgia_hospital/utils/data/category_model.dart';
@@ -188,6 +190,22 @@ class PatientHomeScreen extends StatelessWidget {
                                       if (index == 0) {
                                         Navigator.pushNamed(context,
                                             PharmaciesScreen.routeName);
+                                      } else if (index == 1) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const LaboratoriesView(),
+                                          ),
+                                        );
+                                      } else if (index == 2) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const StoreView(),
+                                          ),
+                                        );
                                       }
                                     },
                                     child: Container(
@@ -201,14 +219,16 @@ class PatientHomeScreen extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           Image.asset(
-                                            CategoryModel.itemServices[index].imagePath,
+                                            CategoryModel
+                                                .itemServices[index].imagePath,
                                             fit: BoxFit.scaleDown,
                                           ),
                                           const SizedBox(
                                             height: 10,
                                           ),
                                           Text(
-                                            CategoryModel.itemServices[index].name,
+                                            CategoryModel
+                                                .itemServices[index].name,
                                             style: AppTextStyle.styleMedium18,
                                           ),
                                           const SizedBox(
@@ -225,12 +245,6 @@ class PatientHomeScreen extends StatelessWidget {
                                 );
                               },
                             )),
-
-
-
-
-
-
 
                         const SizedBox(
                           height: 15,
@@ -258,22 +272,23 @@ class PatientHomeScreen extends StatelessWidget {
                                             MedicalAllRecordsScreen.routeName);
                                       }
                                       if (index == 1) {
-                                        Navigator.pushNamed(context,
-                                            MyDoctorsScreen.routeName);
+                                        Navigator.pushNamed(
+                                            context, MyDoctorsScreen.routeName);
                                       }
                                     },
                                     child: Container(
                                       width: width * .4,
                                       decoration: BoxDecoration(
                                           borderRadius:
-                                          BorderRadius.circular(15),
+                                              BorderRadius.circular(15),
                                           color: AppColors.whiteColor),
                                       child: Column(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Image.asset(
-                                            CategoryModel.itemData[index].imagePath,
+                                            CategoryModel
+                                                .itemData[index].imagePath,
                                             fit: BoxFit.scaleDown,
                                             width: 70,
                                             height: 70,
@@ -285,7 +300,6 @@ class PatientHomeScreen extends StatelessWidget {
                                             CategoryModel.itemData[index].name,
                                             style: AppTextStyle.styleMedium18,
                                           ),
-
                                         ],
                                       ),
                                     ),
