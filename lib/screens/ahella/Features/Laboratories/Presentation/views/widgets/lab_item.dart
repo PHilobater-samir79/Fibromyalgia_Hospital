@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Data/Models/lab_model.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_details_view.dart';
-
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/enable_location_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/location_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class LabItem extends StatelessWidget {
   const LabItem({
     super.key,
@@ -17,9 +18,9 @@ class LabItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => LaboratoriesDetailsView(
-              labModel: labModel,
-            ),
+            builder: (context) {
+              return const EnableLocationScreen();
+            }
           ),
         );
       },

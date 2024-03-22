@@ -1,9 +1,9 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/Manager/cubit/store_cubit.dart';
-import 'package:fibromyalgia_hospital/screens/ui/medical_all_records_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/medical_all_records_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/general_doctor_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/general_patient_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_setting/doctor_setting_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/add_record_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/add_record_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/doctor_appointment_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/doctor_appointment_screen_2.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_chat/doctor_chat_screen.dart';
@@ -24,10 +24,10 @@ import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_scre
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign_in/patient_log_in.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign_in/patient_sign_up.dart';
 import 'package:fibromyalgia_hospital/screens/ui/my_cart_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/my_doctors_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/my_doctors_screen.dart';
 import 'package:fibromyalgia_hospital/screens/screens_not_use/ordars_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_chat/patient_chat_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/patient_details_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/patient_details_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/patient_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_chat/patient_messages_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_patient/patients_screen.dart';

@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/screens/ui/custom_all_records_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/widgets/custom_all_records_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
@@ -6,8 +6,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/styles/Text_style/app_text_style.dart';
-import 'custom_add_record_show_model.dart';
+import '../../../../utils/styles/Text_style/app_text_style.dart';
+import 'widgets/custom_add_record_show_model.dart';
 
 class MedicalAllRecordsScreen extends StatelessWidget {
   const MedicalAllRecordsScreen({super.key});

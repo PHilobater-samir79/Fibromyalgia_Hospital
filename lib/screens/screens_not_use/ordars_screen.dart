@@ -1,5 +1,5 @@
 import 'package:fibromyalgia_hospital/screens/screens_not_use/order_screen_model.dart';
-import 'package:fibromyalgia_hospital/screens/ui/custom_order_screen_container.dart';
+import 'package:fibromyalgia_hospital/screens/screens_not_use/custom_order_screen_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';

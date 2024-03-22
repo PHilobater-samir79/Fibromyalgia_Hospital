@@ -1,7 +1,10 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_view.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
-import 'package:fibromyalgia_hospital/screens/ui/medical_all_records_screen.dart';
-import 'package:fibromyalgia_hospital/screens/ui/my_doctors_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Home/Presentation/views/main_home_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_view.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/medical_all_records_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/my_doctors_screen.dart';
 import 'package:fibromyalgia_hospital/utils/data/category_model.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/widgets/custom_popular_doctor_container.dart';
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/pharmaciess_screen.dart';
@@ -206,6 +209,16 @@ class PatientHomeScreen extends StatelessWidget {
                                                 const StoreView(),
                                           ),
                                         );
+                                      }
+                                      if (index == 1) {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                          return const LaboratoriesView();
+                                        },));
+                                      }
+                                      if (index == 2) {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                          return const StoreView();
+                                        },));
                                       }
                                     },
                                     child: Container(

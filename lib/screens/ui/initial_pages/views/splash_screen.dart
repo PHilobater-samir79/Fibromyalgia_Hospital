@@ -26,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     navigator();
   }
 
+
   void navigator() {
     bool isVisited = getIt<CacheHelper>().getData(key: 'isVisited') ?? false;
     Future.delayed(const Duration(seconds: 5), () {

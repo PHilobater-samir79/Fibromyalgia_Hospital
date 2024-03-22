@@ -24,7 +24,7 @@ class DiagnosticsModel {
 
   static List<DiagnosticsModel> diagnostics = [
     DiagnosticsModel(
-      title: 'Advanced Young Indian Health Checkup',
+      title: 'Advanced Health Checkup',
       subTitle: 'Ideal for individuals aged 21-40 years',
       imageUrl: 'assets/images/diagnostics-1.png',
       offer: '+ 10% Health cashback T&C',

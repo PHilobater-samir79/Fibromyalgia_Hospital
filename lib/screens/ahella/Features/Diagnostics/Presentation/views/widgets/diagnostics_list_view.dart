@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Data/Models/diagnostics_model.dart';
+import 'package:flutter/material.dart';
 
 import 'diagnostics_item.dart';
 

@@ -2,7 +2,7 @@ import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Prese
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_home/widgets/appointment_screen.dart';
 import 'package:fibromyalgia_hospital/utils/data/category_model.dart';
-import 'package:fibromyalgia_hospital/screens/ui/custom_patient_appointment_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_patient/custom_patient_appointment_container.dart';
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/pharmaciess_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';

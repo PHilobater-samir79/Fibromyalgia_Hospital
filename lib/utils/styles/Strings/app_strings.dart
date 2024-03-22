@@ -65,7 +65,7 @@ class AppStrings {
   static const String medicineOrders = 'Medicine orders';
   static const String diagnosticTests = 'Diagnostic Tests';
   static const String healthPlans = 'Health plans';
-  static const String myAccountAndPractoDrive = 'My account and Practo Drive';
+  static const String myAccount = 'My account ';
   static const String haveAFeatureInMind = 'Have a feature in mind';
   static const String otherIssues = 'Other issues';
   static const String guideToOrder = 'Guide to order';
@@ -151,38 +151,57 @@ class AppStrings {
       'What information do we collect ?';
   static const String fibromyalgiaPrivacyPolicyDesc2 =
       ' - Personal Information: We may collect personal information such as your name, contact details, medical history, and demographic information when you register with our application or use our services.\n- Health Information: We may collect health-related information, including symptoms, treatment history, and other relevant medical data to provide personalized healthcare services.\n- Usage Data: We collect information about how you interact with our application, including device information, IP addresses, browser type, and pages visited.';
-  static const String fibromyalgiaPrivacyPolicy3 = 'How do we use your information ?';
-  static const String fibromyalgiaPrivacyPolicyDesc3 = ' - Providing Services: We use your information to deliver healthcare services, including appointment scheduling, treatment recommendations, and medical advice.\n- Personalization: We personalize your experience by analyzing your health data to provide tailored recommendations and content.\n- Improving Services: We use aggregated data to improve our application’s functionality, user interface, and overall user experience.\n- Communication: We may use your contact information to send important updates, newsletters, or promotional materials related to our services.';
-static const String fibromyalgiaPrivacyPolicy4 = 'How we secure your Data ?' ;
-static const String fibromyalgiaPrivacyPolicyDesc4 = 'We implement appropriate security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.' ;
-static const String  fibromyalgiaPrivacyPolicy5= 'How do we share Data ?' ;
-static const String  fibromyalgiaPrivacyPolicyDesc5= 'We may share your information with third-party service providers, such as healthcare professionals and IT vendors, to facilitate the provision of our services. We ensure that these providers adhere to strict confidentiality and data protection standards.' ;
-static const String  fibromyalgiaPrivacyPolicy6= 'What is the Legal Compliance ?' ;
-static const String  fibromyalgiaPrivacyPolicyDesc6= 'We may disclose your information when required by law or in response to legal processes, such as subpoenas or court orders.' ;
-static const String  fibromyalgiaPrivacyPolicy7= 'What is your Rights ?' ;
-static const String  fibromyalgiaPrivacyPolicyDesc7= ' - Access: You have the right to access and review the personal information we hold about you.\n- Correction: You can request to correct any inaccuracies in your personal information.\n- Deletion: You may request the deletion of your personal information, subject to applicable legal requirements.' ;
-static const String  fibromyalgiaPrivacyPolicy8= "What it the Children's Policy ?" ;
-static const String  fibromyalgiaPrivacyPolicyDesc8= 'Our application is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from minors without parental consent.' ;
-static const String  fibromyalgiaPrivacyPolicy9= 'How do we update the privacy policy ?' ;
-static const String  fibromyalgiaPrivacyPolicyDesc9= 'We reserve the right to update this Privacy Policy periodically. Any changes will be effective immediately upon posting the revised policy on our application.' ;
-static const String  fibromyalgiaPrivacyPolicy10= 'Contact Us' ;
-static const String  fibromyalgiaPrivacyPolicyDesc10= 'If you have any questions or concerns about our Privacy Policy or data practices, please contact us at [contact information].' ;
-static const String fibromyalgiaPrivacyPolicyFinal= 'By using our application, you consent to the collection and use of your information as described in this Privacy Policy.';
+  static const String fibromyalgiaPrivacyPolicy3 =
+      'How do we use your information ?';
+  static const String fibromyalgiaPrivacyPolicyDesc3 =
+      ' - Providing Services: We use your information to deliver healthcare services, including appointment scheduling, treatment recommendations, and medical advice.\n- Personalization: We personalize your experience by analyzing your health data to provide tailored recommendations and content.\n- Improving Services: We use aggregated data to improve our application’s functionality, user interface, and overall user experience.\n- Communication: We may use your contact information to send important updates, newsletters, or promotional materials related to our services.';
+  static const String fibromyalgiaPrivacyPolicy4 = 'How we secure your Data ?';
+  static const String fibromyalgiaPrivacyPolicyDesc4 =
+      'We implement appropriate security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.';
+  static const String fibromyalgiaPrivacyPolicy5 = 'How do we share Data ?';
+  static const String fibromyalgiaPrivacyPolicyDesc5 =
+      'We may share your information with third-party service providers, such as healthcare professionals and IT vendors, to facilitate the provision of our services. We ensure that these providers adhere to strict confidentiality and data protection standards.';
+  static const String fibromyalgiaPrivacyPolicy6 =
+      'What is the Legal Compliance ?';
+  static const String fibromyalgiaPrivacyPolicyDesc6 =
+      'We may disclose your information when required by law or in response to legal processes, such as subpoenas or court orders.';
+  static const String fibromyalgiaPrivacyPolicy7 = 'What is your Rights ?';
+  static const String fibromyalgiaPrivacyPolicyDesc7 =
+      ' - Access: You have the right to access and review the personal information we hold about you.\n- Correction: You can request to correct any inaccuracies in your personal information.\n- Deletion: You may request the deletion of your personal information, subject to applicable legal requirements.';
+  static const String fibromyalgiaPrivacyPolicy8 =
+      "What it the Children's Policy ?";
+  static const String fibromyalgiaPrivacyPolicyDesc8 =
+      'Our application is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from minors without parental consent.';
+  static const String fibromyalgiaPrivacyPolicy9 =
+      'How do we update the privacy policy ?';
+  static const String fibromyalgiaPrivacyPolicyDesc9 =
+      'We reserve the right to update this Privacy Policy periodically. Any changes will be effective immediately upon posting the revised policy on our application.';
+  static const String fibromyalgiaPrivacyPolicy10 = 'Contact Us';
+  static const String fibromyalgiaPrivacyPolicyDesc10 =
+      'If you have any questions or concerns about our Privacy Policy or data practices, please contact us at [contact information].';
+  static const String fibromyalgiaPrivacyPolicyFinal =
+      'By using our application, you consent to the collection and use of your information as described in this Privacy Policy.';
+
+  static const String saveMedicalRecord = 'Save Medical Record';
+  static const String helpCenterNumber1Desc =
+      '1- Choose doctors page\n2- Select the right doctor for you\n3- Choose the date & time\n4- Press on Confirm';
+  static const String helpCenterNumber2Desc =
+      '1- Open Notifications page to see the appointments reminder.\n2-Open My doctors page';
+  static const String helpCenterNumber3Desc =
+      '1- Choose "laboratory" from services in home page\n2- Choose "Hospital tests"\n3 - Click on " Book Now "\n4 - Choose from offers the offer and the test you want';
+  static const String helpCenterNumber4Desc =
+      '1- open medical record from your data\n2- Click " add a record"\n3 - upload your medical record and click on upload record';
+  static const String helpCenterNumber5Desc =
+      '1- Make your password at least 8 characters\n2- Username should contain symbols& numbers\n3- Save your medical records every time';
+  static const String helpCenterNumber6Desc =
+      "1- You can Text support service's team.\n2- You can rate Doctors & Equipments.";
+
+
+
 
 
 
   // static const String = '';
   // static const String = '';
   // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-  // static const String = '';
-
-
 }

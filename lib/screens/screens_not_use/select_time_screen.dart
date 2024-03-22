@@ -1,7 +1,7 @@
-import 'package:fibromyalgia_hospital/screens/ui/custom_availiable_time_widget.dart';
-import 'package:fibromyalgia_hospital/screens/ui/custom_date_time_container.dart';
-import 'package:fibromyalgia_hospital/screens/ui/custom_no_availiable_time_widget.dart';
-import 'package:fibromyalgia_hospital/screens/ui/custom_search_docrors_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/custom_availiable_time_widget.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/custom_date_time_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/custom_no_availiable_time_widget.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/custom_search_docrors_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
@@ -68,9 +68,9 @@ class SelectTimeScreen extends StatelessWidget {
                   isAvailable == true
                       ? const CustomAvailiableTimeWidget()
                       : const CustomNoAvailiableTimeWidget(),
-                  Expanded(child: SizedBox()),
-                  Center(child: CustomButton(text: 'Saved')),
-                  SizedBox(height: 30,)
+                  const Expanded(child: SizedBox()),
+                  const Center(child: CustomButton(text: 'Saved')),
+                  const SizedBox(height: 30,)
                 ],
               ),
             )

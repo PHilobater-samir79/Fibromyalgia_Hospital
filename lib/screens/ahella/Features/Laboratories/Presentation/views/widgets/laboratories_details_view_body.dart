@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Data/Models/lab_model.dart';
-
+import 'package:flutter/material.dart';
 class LaboratoriesDetailsViewBody extends StatelessWidget {
   const LaboratoriesDetailsViewBody({super.key, required this.labModel});
 

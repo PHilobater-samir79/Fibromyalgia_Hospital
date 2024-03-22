@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/screens/ui/custom_find_doctors_container.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/doctor_details/custom_find_doctors_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';

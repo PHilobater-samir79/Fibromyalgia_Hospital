@@ -4,7 +4,7 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../utils/styles/Strings/app_strings.dart';
+import '../../../../../utils/styles/Strings/app_strings.dart';
 
 class CustomAllRecordsContainer extends StatelessWidget {
   const CustomAllRecordsContainer({super.key});

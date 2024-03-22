@@ -1,4 +1,4 @@
-import 'package:fibromyalgia_hospital/screens/ui/custom_profile_text_field.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_setting/patient_profile/custom_profile_text_field.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
@@ -174,7 +174,7 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                   const Expanded(
                     child: SizedBox(),
                   ),
-                  const CustomButton(text: AppStrings.continueText),
+                  const CustomButton(text: 'Done'),
                   const SizedBox(
                     height: 40,
                   ),
