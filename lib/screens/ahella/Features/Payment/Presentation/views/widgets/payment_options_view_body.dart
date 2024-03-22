@@ -34,7 +34,7 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
           SelectPaymentOptionWidget(
             title: 'PayPal',
             isSelected: isPayPalSelected,
-            trailing: SvgPicture.asset('assets/images/paypal.svg'),
+            trailing: SvgPicture.asset('assets/ahella/paypal.svg'),
             onTap: () {
               setState(() {
                 isPayPalSelected = !isPayPalSelected;
@@ -48,9 +48,9 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             isSelected: isVisaSelected,
             trailing: Row(
               children: [
-                SvgPicture.asset('assets/images/visa.svg'),
+                SvgPicture.asset('assets/ahella/visa.svg'),
                 const SizedBox(width: 8),
-                SvgPicture.asset('assets/images/master-card.svg'),
+                SvgPicture.asset('assets/ahella/master-card.svg'),
               ],
             ),
             onTap: () {

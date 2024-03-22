@@ -3,6 +3,7 @@ import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/doctor_sign_
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_forget_password_container.dart';
+import 'package:fibromyalgia_hospital/utils/constants.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
@@ -81,9 +82,13 @@ class DoctorLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .05,
                     ),
-                    CustomButton(text: AppStrings.login,onTap: (){
-                      Navigator.pushNamed(context, GeneralDoctorHomeScreen.routeName);
-                    }),
+                    CustomButton(
+                        text: AppStrings.login,
+                        onTap: () {
+                          routeHomeName = GeneralDoctorHomeScreen.routeName;
+                          Navigator.pushNamed(
+                              context, GeneralDoctorHomeScreen.routeName);
+                        }),
                     const SizedBox(
                       height: 10,
                     ),
@@ -108,8 +113,8 @@ class DoctorLogIn extends StatelessWidget {
                             fontSize: 14, color: AppColors.greenColor),
                       ),
                     ),
-                     SizedBox(
-                      height: height*.1,
+                    SizedBox(
+                      height: height * .1,
                     ),
                     TextButton(
                       onPressed: () {

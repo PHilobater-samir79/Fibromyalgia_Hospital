@@ -14,7 +14,7 @@ class StoreViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomHeaderSection(title: 'Store', onTap: () {}),
+        CustomHeaderSection(title: 'Store', onTap: () => Navigator.pop(context)),
         const SizedBox(height: 34),
         const CustomTextFormField(
           suffixIcon: Icon(Icons.close),

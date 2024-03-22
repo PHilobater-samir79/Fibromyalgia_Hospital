@@ -46,7 +46,7 @@ class CreditDetailsViewBody extends StatelessWidget {
                         color: Color(0xff000000),
                       ),
                     ),
-                    SvgPicture.asset('assets/images/master-card.svg'),
+                    SvgPicture.asset('assets/ahella/master-card.svg'),
                   ],
                 ),
                 const SizedBox(height: 9),

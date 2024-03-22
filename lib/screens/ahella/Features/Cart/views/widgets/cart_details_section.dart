@@ -19,7 +19,7 @@ class CartDetailsSection extends StatelessWidget {
           ),
           child: Row(
             children: [
-              SvgPicture.asset('assets/images/shopping-cart.svg'),
+              SvgPicture.asset('assets/ahella/shopping-cart.svg'),
               const SizedBox(width: 30),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class CartDetailsSection extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              SvgPicture.asset('assets/images/arrow-down.svg'),
+              SvgPicture.asset('assets/ahella/arrow-down.svg'),
             ],
           ),
         ),
@@ -50,7 +50,7 @@ class CartDetailsSection extends StatelessWidget {
           ),
           child: Row(
             children: [
-              SvgPicture.asset('assets/images/percent.svg'),
+              SvgPicture.asset('assets/ahella/percent.svg'),
               const SizedBox(width: 30),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +78,7 @@ class CartDetailsSection extends StatelessWidget {
                     child: const Text('ST#132'),
                   ),
                   const SizedBox(width: 10),
-                  SvgPicture.asset('assets/images/right.svg'),
+                  SvgPicture.asset('assets/ahella/right.svg'),
                 ],
               ),
             ],

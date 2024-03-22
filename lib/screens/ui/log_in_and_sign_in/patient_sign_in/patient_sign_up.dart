@@ -2,6 +2,7 @@ import 'package:fibromyalgia_hospital/screens/ui/patient/general_patient_home_sc
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign_in/patient_log_in.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
+import 'package:fibromyalgia_hospital/utils/constants.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
@@ -118,6 +119,7 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     CustomButton(
                         text: AppStrings.signup,
                         onTap: () {
+                          routeHomeName = GeneralPatientHomeScreen.routeName;
                           Navigator.pushNamed(
                               context, GeneralPatientHomeScreen.routeName);
                         }),

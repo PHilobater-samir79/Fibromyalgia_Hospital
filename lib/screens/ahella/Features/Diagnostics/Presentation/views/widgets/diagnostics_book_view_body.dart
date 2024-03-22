@@ -18,7 +18,7 @@ class DiagnosticsBookViewBody extends StatelessWidget {
           onTap: () => Navigator.pop(context),
         ),
         const Spacer(),
-        SvgPicture.asset('assets/images/book-diagnostics.svg'),
+        SvgPicture.asset('assets/ahella/book-diagnostics.svg'),
         const SizedBox(height: 40),
         const Text(
           'You haven’t booked any tests yet',

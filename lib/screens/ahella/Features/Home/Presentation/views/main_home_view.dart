@@ -63,9 +63,9 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
         padding: const EdgeInsets.all(6.0),
         decoration:
             const BoxDecoration(color: MyColors.green, shape: BoxShape.circle),
-        child: SvgPicture.asset('assets/images/home.svg', color: Colors.white),
+        child: SvgPicture.asset('assets/ahella/home.svg', color: Colors.white),
       ),
-      inactiveIcon: SvgPicture.asset('assets/images/home.svg',
+      inactiveIcon: SvgPicture.asset('assets/ahella/home.svg',
           color: const Color(0xff858EA9)),
     ),
     PersistentBottomNavBarItem(
@@ -73,9 +73,9 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
         padding: const EdgeInsets.all(6.0),
         decoration:
             const BoxDecoration(color: MyColors.green, shape: BoxShape.circle),
-        child: SvgPicture.asset('assets/images/fav.svg', color: Colors.white),
+        child: SvgPicture.asset('assets/ahella/fav.svg', color: Colors.white),
       ),
-      inactiveIcon: SvgPicture.asset('assets/images/fav.svg',
+      inactiveIcon: SvgPicture.asset('assets/ahella/fav.svg',
           color: const Color(0xff858EA9)),
     ),
     PersistentBottomNavBarItem(
@@ -83,9 +83,9 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
         padding: const EdgeInsets.all(6.0),
         decoration:
             const BoxDecoration(color: MyColors.green, shape: BoxShape.circle),
-        child: SvgPicture.asset('assets/images/book.svg', color: Colors.white),
+        child: SvgPicture.asset('assets/ahella/book.svg', color: Colors.white),
       ),
-      inactiveIcon: SvgPicture.asset('assets/images/book.svg',
+      inactiveIcon: SvgPicture.asset('assets/ahella/book.svg',
           color: const Color(0xff858EA9)),
     ),
     PersistentBottomNavBarItem(
@@ -93,9 +93,9 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
         padding: const EdgeInsets.all(6.0),
         decoration:
             const BoxDecoration(color: MyColors.green, shape: BoxShape.circle),
-        child: SvgPicture.asset('assets/images/chat.svg', color: Colors.white),
+        child: SvgPicture.asset('assets/ahella/chat.svg', color: Colors.white),
       ),
-      inactiveIcon: SvgPicture.asset('assets/images/chat.svg',
+      inactiveIcon: SvgPicture.asset('assets/ahella/chat.svg',
           color: const Color(0xff858EA9)),
     ),
   ];

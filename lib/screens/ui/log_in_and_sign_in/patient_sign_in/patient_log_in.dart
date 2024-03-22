@@ -3,6 +3,7 @@ import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/patient_sign
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/Custom_social_media_sign.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_Text_field.dart';
 import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/widgets/custom_reset_password_container.dart';
+import 'package:fibromyalgia_hospital/utils/constants.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
@@ -81,9 +82,13 @@ class PatientLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .05,
                     ),
-                     CustomButton(text: AppStrings.login,onTap: (){
-                       Navigator.pushNamed(context, GeneralPatientHomeScreen.routeName);
-                     }),
+                    CustomButton(
+                        text: AppStrings.login,
+                        onTap: () {
+                          routeHomeName = GeneralPatientHomeScreen.routeName;
+                          Navigator.pushNamed(
+                              context, GeneralPatientHomeScreen.routeName);
+                        }),
                     const SizedBox(
                       height: 10,
                     ),
