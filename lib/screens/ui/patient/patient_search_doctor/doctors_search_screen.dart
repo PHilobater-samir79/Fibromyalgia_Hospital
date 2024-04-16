@@ -6,6 +6,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../patient_home/data/searchmodel.dart';
+
 class DoctorsSearchScreen extends StatefulWidget {
   const DoctorsSearchScreen({super.key});
   static const String routeName = 'DoctorsSearchScreen';
@@ -89,9 +91,9 @@ class _DoctorsSearchScreenState extends State<DoctorsSearchScreen>
                               Center(
                                 child: Expanded(
                                   child: ListView.builder(
-                                    itemCount: 10,
+                                    itemCount: SearchModel.All.length,
                                     itemBuilder: (context, index) {
-                                      return const CustomSearchDoctorsContainer();
+                                      return CustomSearchDoctorsContainer(index: index, Modelindex: 0,);
                                     },
                                   ),
                                 ),
@@ -99,27 +101,27 @@ class _DoctorsSearchScreenState extends State<DoctorsSearchScreen>
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: SearchModel.Dentist.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomSearchDoctorsContainer();
+                                    return CustomSearchDoctorsContainer(index: index, Modelindex: 1,);
                                   },
                                 ),
                               )),
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: SearchModel.Cardiology.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomSearchDoctorsContainer();
+                                    return CustomSearchDoctorsContainer(index: index, Modelindex: 2,);
                                   },
                                 ),
                               )),
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: SearchModel.physioTherapy.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomSearchDoctorsContainer();
+                                    return CustomSearchDoctorsContainer(index: index, Modelindex: 3,);
                                   },
                                 ),
                               )),

@@ -8,6 +8,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 
+import 'data/mydoctorsmodel.dart';
+
 class MyDoctorsScreen extends StatefulWidget {
   const MyDoctorsScreen({super.key});
   static const String routeName = 'MyDoctorsScreen';
@@ -90,11 +92,11 @@ class _MyDoctorsScreenState extends State<MyDoctorsScreen>
                               Center(
                                 child: Expanded(
                                   child: ListView.builder(
-                                    itemCount: 5,
+                                    itemCount: MyDoctorModel.DoctorModel.length,
                                     itemBuilder: (context, index) {
-                                      return const Padding(
+                                      return  Padding(
                                         padding: EdgeInsets.only(bottom: 10.0),
-                                        child: CustomMyDoctorsContainer(),
+                                        child: CustomMyDoctorsContainer(index: index,),
                                       );
                                     },
                                   ),
@@ -103,9 +105,9 @@ class _MyDoctorsScreenState extends State<MyDoctorsScreen>
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: MyDoctorModel.DoctorModel.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomSearchDoctorsContainer();
+                                    return  CustomSearchDoctorsContainer(index: index, Modelindex: 0,);
                                   },
                                 ),
                               )),

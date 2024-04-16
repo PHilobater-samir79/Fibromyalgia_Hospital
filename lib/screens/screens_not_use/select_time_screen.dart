@@ -48,7 +48,7 @@ class SelectTimeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const CustomSearchDoctorsContainer(),
+                  //const CustomSearchDoctorsContainer(),
                   const SizedBox(
                     height: 20,
                   ),

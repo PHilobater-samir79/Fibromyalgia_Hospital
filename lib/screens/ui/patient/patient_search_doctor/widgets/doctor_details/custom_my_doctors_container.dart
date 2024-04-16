@@ -6,8 +6,13 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../patient_home/data/mydoctorsmodel.dart';
+
 class CustomMyDoctorsContainer extends StatelessWidget {
-  const CustomMyDoctorsContainer({super.key});
+  final int index ;
+  CustomMyDoctorsContainer({super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Image.asset(AppAssets.doctorPhoto),
+                  child: Image.asset("${MyDoctorModel.DoctorModel[index].imagePath}",),
 
                 ),
                 const SizedBox(width: 10,),
@@ -47,13 +52,13 @@ class CustomMyDoctorsContainer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Dr. Shruti Kedia',style: AppTextStyle.styleMedium18,),
+                         Text(MyDoctorModel.DoctorModel[index].Name,style: AppTextStyle.styleMedium18,),
                         const SizedBox(height: 3,),
-                        Text('Tooth Dentist',style: AppTextStyle.styleRegular15.copyWith(color: AppColors.greenColor),),
+                        Text(MyDoctorModel.DoctorModel[index].SubTittle,style: AppTextStyle.styleRegular15.copyWith(color: AppColors.greenColor),),
                         const SizedBox(height: 3,),
-                        const Text('7 Years experience ',style: AppTextStyle.styleRegular15,),
+                         Text(MyDoctorModel.DoctorModel[index].Description,style: AppTextStyle.styleRegular15,),
                         const SizedBox(height: 3,),
-                        const Row(
+                         Row(
                           children: [
                             CircleAvatar(
                               backgroundColor: AppColors.greenColor,
@@ -62,7 +67,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
 
                             ),
                             SizedBox(width: 3,),
-                            Text('87 %',style: AppTextStyle.styleRegular15,),
+                            Text(MyDoctorModel.DoctorModel[index].FirstRatio,style: AppTextStyle.styleRegular15,),
                             SizedBox(width: 10,),
                             CircleAvatar(
                               backgroundColor: AppColors.greenColor,
@@ -71,7 +76,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
 
                             ),
                             SizedBox(width: 3,),
-                            Text('69 Patient',style: AppTextStyle.styleRegular15,),
+                            Text(MyDoctorModel.DoctorModel[index].SecRatio,style: AppTextStyle.styleRegular15,),
 
 
                           ],
@@ -89,7 +94,7 @@ class CustomMyDoctorsContainer extends StatelessWidget {
               children: [
                 Text(AppStrings.doctorDate,style: AppTextStyle.styleMedium18.copyWith(color: AppColors.greenColor),),
                 const SizedBox(width: 10,),
-                Text('10:00 AM tomorrow',style: AppTextStyle.styleMedium18.copyWith(color: AppColors.greyTextColor),),
+                Text(MyDoctorModel.DoctorModel[index].Date,style: AppTextStyle.styleMedium18.copyWith(color: AppColors.greyTextColor),),
 
 
 

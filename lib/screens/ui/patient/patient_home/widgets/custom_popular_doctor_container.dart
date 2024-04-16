@@ -5,8 +5,13 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../data/newpopulardoctormodel.dart';
+
 class CustomPopularDoctorContainer extends StatelessWidget {
-  const CustomPopularDoctorContainer({super.key});
+  final int index ;
+  const CustomPopularDoctorContainer({super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +32,21 @@ class CustomPopularDoctorContainer extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(
-                AppAssets.largeDoctorPhoto,
+                "${NewPopularDoctorModel.PopularDoctor[index].imagePath}",
                 fit: BoxFit.cover,
               ),
               const SizedBox(
                 height: 5,
               ),
-              const Text(
-                'Dr. Pediatrician',
+               Text(
+                NewPopularDoctorModel.PopularDoctor[index].Name,
                 style: AppTextStyle.styleMedium18,
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
-                'Specialist Cardiologist',
+                NewPopularDoctorModel.PopularDoctor[index].Description,
                 style: AppTextStyle.styleRegular15.copyWith(fontSize: 12),
               ),
               const SizedBox(

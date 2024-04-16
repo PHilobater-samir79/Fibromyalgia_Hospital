@@ -16,6 +16,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 
+import 'data/newpopulardoctormodel.dart';
+
 class PatientHomeScreen extends StatelessWidget {
   const PatientHomeScreen({super.key});
   static const String routeName = 'PatientHomeScreen';
@@ -56,7 +58,7 @@ class PatientHomeScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Hi Philobater samir !',
+                                    'Hi Yahia Azzam !',
                                     style: AppTextStyle.styleMedium18.copyWith(
                                         color: AppColors.greyWhite,
                                         fontWeight: FontWeight.w400),
@@ -162,10 +164,10 @@ class PatientHomeScreen extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .28,
                           child: ListView.builder(
-                            itemCount: 10,
+                            itemCount: NewPopularDoctorModel.PopularDoctor.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return const CustomPopularDoctorContainer();
+                              return  CustomPopularDoctorContainer(index: index,);
                             },
                           ),
                         ),
