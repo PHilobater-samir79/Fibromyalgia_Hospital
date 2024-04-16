@@ -24,7 +24,7 @@ class AppAssets {
   static const String orderScreenContainerPhoto6 =
       'assets/images/orders_screen_photo6.svg';
   static const String circleDoctorPhoto =
-      'assets/images/circular_doctor_photo.png';
+      'assets/images/shadydent.png';
   static const String circlePatientPhoto =
       'assets/images/circle_patient_photo.png';
 

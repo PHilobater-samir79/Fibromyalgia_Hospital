@@ -11,6 +11,8 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 
+import '../doctor_patient/data/patientappointmentmodel.dart';
+
 class DoctorHomeScreen extends StatelessWidget {
   const DoctorHomeScreen({super.key});
   static const String routeName = 'DoctorHomeScreen';
@@ -48,7 +50,7 @@ class DoctorHomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Hi Dr.Philobater samir !',
+                              'Hi Dr.Shady Ali !',
                               style: AppTextStyle.styleMedium18.copyWith(
                                   fontSize: 20,
                                   color: AppColors.whiteColor,
@@ -196,11 +198,11 @@ class DoctorHomeScreen extends StatelessWidget {
                             SizedBox(
                               height: height,
                               child: ListView.builder(
-                                itemCount: 10,
+                                itemCount: PatientAppointmentModel.appointment.length,
                                 scrollDirection: Axis.vertical,
                                 physics: const NeverScrollableScrollPhysics(),
                                 itemBuilder: (context, index) {
-                                  return const CustomPatientAppointmentContainer();
+                                  return  CustomPatientAppointmentContainer(index: index,);
                                 },
                               ),
                             ),

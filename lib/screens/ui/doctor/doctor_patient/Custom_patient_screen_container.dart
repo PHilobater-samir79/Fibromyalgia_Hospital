@@ -5,8 +5,13 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
+import 'data/custompatientmodel.dart';
+
 class CustomPatientScreenContainer extends StatelessWidget {
-  const CustomPatientScreenContainer({super.key});
+  final int index ;
+  const CustomPatientScreenContainer({super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class CustomPatientScreenContainer extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Image.asset(AppAssets.doctorPhoto),
+                  child: Image.asset("${PatientModel.patient[index].imagePath}",),
                 ),
                 const SizedBox(width: 20,),
                 SizedBox(
@@ -43,11 +48,14 @@ class CustomPatientScreenContainer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Ahmed Mohamed',style: AppTextStyle.styleMedium18,),
+                        Text(PatientModel.patient[index].Name
+                          ,style: AppTextStyle.styleMedium18,),
                         const SizedBox(height: 5,),
-                        Text('Online Consultation',style: AppTextStyle.styleRegular15.copyWith(color: AppColors.greenColor),),
+                        Text(PatientModel.patient[index].Description
+                          ,style: AppTextStyle.styleRegular15.copyWith(color: AppColors.greenColor),),
                         const SizedBox(height: 5,),
-                        const Text('10:00 AM tomorrow',style: AppTextStyle.styleRegular15,),
+                        Text(PatientModel.patient[index].Time
+                          ,style: AppTextStyle.styleRegular15,),
                         const SizedBox(height: 3,),
                       ],
                     ),

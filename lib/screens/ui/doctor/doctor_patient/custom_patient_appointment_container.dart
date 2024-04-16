@@ -3,8 +3,14 @@ import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import 'data/patientappointmentmodel.dart';
+
 class CustomPatientAppointmentContainer extends StatelessWidget {
-  const CustomPatientAppointmentContainer({super.key});
+  final int index ;
+  const CustomPatientAppointmentContainer({super.key,
+    required this.index,
+  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +30,13 @@ class CustomPatientAppointmentContainer extends StatelessWidget {
         ),
         child: Center(
           child: ListTile(
-            leading: Image.asset(AppAssets.circlePatientPhoto),
+            leading: Image.asset("${PatientAppointmentModel.appointment[index].imagePath}",),
             title: Text(
-              'Ahmed Khaled',
+              PatientAppointmentModel.appointment[index].Name,
               style: AppTextStyle.styleMedium18,
             ),
             subtitle: Text(
-              'Online Consultation',
+              PatientAppointmentModel.appointment[index].Description,
               style: AppTextStyle.styleRegular15,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -42,7 +48,8 @@ class CustomPatientAppointmentContainer extends StatelessWidget {
                 color: AppColors.greenColor,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Center(child: Text('2:00 PM',style: AppTextStyle.styleRegular15.copyWith(color: AppColors.whiteColor),)),
+              child: Center(child: Text(PatientAppointmentModel.appointment[index].Time
+                  ,style: AppTextStyle.styleRegular15.copyWith(color: AppColors.whiteColor),)),
             ),
           ),
         ),

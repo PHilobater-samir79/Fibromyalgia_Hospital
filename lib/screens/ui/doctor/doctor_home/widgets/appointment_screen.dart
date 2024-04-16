@@ -7,6 +7,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../doctor_patient/data/patientappointmentmodel.dart';
+
 class AppointmentScreen extends StatelessWidget {
   const AppointmentScreen({super.key});
   static const String routeName = 'AppointmentScreen';
@@ -64,9 +66,9 @@ class AppointmentScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Expanded(child: ListView.builder(
-                    itemCount: 20,
+                    itemCount: PatientAppointmentModel.appointment.length,
                     itemBuilder: (context, index) {
-                      return const CustomPatientAppointmentContainer();
+                      return  CustomPatientAppointmentContainer(index: index,);
                     },
                   ))
                 ],

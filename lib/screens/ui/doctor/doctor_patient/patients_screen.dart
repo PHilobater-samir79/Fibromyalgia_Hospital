@@ -6,6 +6,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 
+import 'data/custompatientmodel.dart';
+
 class PatientScreen extends StatelessWidget {
   const PatientScreen({super.key});
   static const String routeName = 'PatientScreen';
@@ -46,11 +48,11 @@ class PatientScreen extends StatelessWidget {
                   ),
                   Expanded(
                       child: ListView.builder(
-                    itemCount: 10,
+                        itemCount: PatientModel.patient.length,
                     itemBuilder: (context, index) {
-                      return const Padding(
+                      return  Padding(
                         padding: EdgeInsets.only(bottom: 10.0),
-                        child: CustomPatientScreenContainer(),
+                        child: CustomPatientScreenContainer(index: index,),
                       );
                     },
                   )),
