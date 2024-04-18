@@ -5,9 +5,18 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class CustomPharmaContainer extends StatelessWidget {
-  const CustomPharmaContainer({super.key});
+import '../../screens/ui/general_screen/ezabyscreen.dart';
+import '../../screens/ui/general_screen/pharmacies_model.dart';
 
+class CustomPharmaContainer extends StatelessWidget {
+
+
+  final Pharmaciesmodel pharmamodel;
+  final int index;
+
+  CustomPharmaContainer ({
+    required this.index,
+    required this.pharmamodel,});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -16,11 +25,11 @@ class CustomPharmaContainer extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8.0),
       child: InkWell(
         onTap: (){
-          Navigator.pushNamed(context, EnableLocationScreen.routeName);
+          Navigator.pushNamed(context, EzabyPharmacy.routeName);
         },
         child: Container(
           width: width,
-          height: height * .16,
+          height: height * .20,
           decoration: BoxDecoration(
               color: AppColors.whiteColor,
               borderRadius: BorderRadius.circular(12)),
@@ -34,7 +43,7 @@ class CustomPharmaContainer extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Image.asset(AppAssets.pharmaPhoto),
+                  child: Image.asset(pharmamodel.imagePath),
                 ),
                 const SizedBox(
                   width: 10,
@@ -47,15 +56,15 @@ class CustomPharmaContainer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'El-Ezaby Pharmacy',
+                         Text(
+                          "${pharmamodel.title}",
                           style: AppTextStyle.styleMedium18,
                         ),
                         const SizedBox(
                           height: 3,
                         ),
-                        const Text(
-                          'Central Spine, Area 101 3rd District, First Neighbourhood,Giza',
+                        Text(
+                          pharmamodel.subTitle,
                           maxLines: 2,
                           style: AppTextStyle.styleRegular15,
                           overflow: TextOverflow.ellipsis,
@@ -63,8 +72,8 @@ class CustomPharmaContainer extends StatelessWidget {
                         const SizedBox(
                           height: 3,
                         ),
-                        const Text(
-                          '02 35317347',
+                         Text(
+                          pharmamodel.number,
                           style: AppTextStyle.styleRegular15,
                         ),
                         const SizedBox(
@@ -74,7 +83,7 @@ class CustomPharmaContainer extends StatelessWidget {
                           children: [
                             RatingBar.builder(
                               itemSize: 20,
-                              initialRating: 3,
+                              initialRating: pharmamodel.rate,
                               minRating: 0,
                               direction: Axis.horizontal,
                               allowHalfRating: true,
@@ -89,7 +98,7 @@ class CustomPharmaContainer extends StatelessWidget {
                             ),
                             const Expanded(child: SizedBox()),
                             Text(
-                              '5',
+                              "${pharmamodel.rate}",
                               style: AppTextStyle.styleRegular15
                                   .copyWith(color: AppColors.blackTextColor),
                             ),

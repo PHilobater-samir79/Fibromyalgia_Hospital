@@ -33,6 +33,10 @@ class AppAssets {
 
   static const String largeDoctorPhoto =
       'assets/images/large_doctor_photo.png';
+  static const String ezabyLogo = 'assets/images/ezaby.jpg';
+  static const String seifLogo = 'assets/images/seif logo.jpg';
+  static const String misrLogo = 'assets/images/misr.jpg';
+  static const String pharmacyLogo = 'assets/images/pharmacy.jpg';
 
 
 

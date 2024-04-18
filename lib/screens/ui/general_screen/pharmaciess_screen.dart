@@ -1,3 +1,5 @@
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/ezabyscreen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/pharmacies_model.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_pharma_container.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
@@ -90,9 +92,10 @@ class _PharmaciesScreenState extends State<PharmaciesScreen>
                               Center(
                                 child: Expanded(
                                   child: ListView.builder(
-                                    itemCount: 10,
+                                    itemCount: Pharmaciesmodel.pharmaModelAll.length ,
                                     itemBuilder: (context, index) {
-                                      return const CustomPharmaContainer();
+                                      return InkWell(onTap: (){if(index==0){Navigator.push(context, MaterialPageRoute(builder:(context){return EzabyPharmacy();}));}
+                                      },child: CustomPharmaContainer(index: index,   pharmamodel: Pharmaciesmodel.pharmaModelAll[index], ));
                                     },
                                   ),
                                 ),
@@ -100,18 +103,18 @@ class _PharmaciesScreenState extends State<PharmaciesScreen>
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: Pharmaciesmodel.pharmaModelTopRatied.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomPharmaContainer();
+                                    return CustomPharmaContainer(index: index,   pharmamodel: Pharmaciesmodel.pharmaModelTopRatied[index], );
                                   },
                                 ),
                               )),
                               Center(
                                   child: Expanded(
                                 child: ListView.builder(
-                                  itemCount: 10,
+                                  itemCount: Pharmaciesmodel.pharmaModelNeareast.length,
                                   itemBuilder: (context, index) {
-                                    return const CustomPharmaContainer();
+                                    return CustomPharmaContainer(index: index,   pharmamodel: Pharmaciesmodel.pharmaModelNeareast[index], );
                                   },
                                 ),
                               )),

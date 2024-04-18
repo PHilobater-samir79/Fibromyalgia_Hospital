@@ -195,6 +195,7 @@ class AppStrings {
       '1- Make your password at least 8 characters\n2- Username should contain symbols& numbers\n3- Save your medical records every time';
   static const String helpCenterNumber6Desc =
       "1- You can Text support service's team.\n2- You can rate Doctors & Equipments.";
+  static const String backButtom = "Back";
 
 
 
