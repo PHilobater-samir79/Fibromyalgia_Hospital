@@ -30,17 +30,19 @@ class CustomPopularDoctorContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               color: AppColors.whiteColor),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 "${NewPopularDoctorModel.PopularDoctor[index].imagePath}",
                 fit: BoxFit.cover,
+                height: height*.15,
               ),
               const SizedBox(
                 height: 5,
               ),
                Text(
                 NewPopularDoctorModel.PopularDoctor[index].Name,
-                style: AppTextStyle.styleMedium18,
+                style: AppTextStyle.styleRegular15.copyWith(color: AppColors.blackTextColor),
               ),
               const SizedBox(
                 height: 5,

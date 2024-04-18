@@ -1,6 +1,7 @@
-import 'package:fibromyalgia_hospital/screens/ui/general_screen/enable_location_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/19011screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/misrscreen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/general_screen/seifscreen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
-import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -25,11 +26,35 @@ class CustomPharmaContainer extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8.0),
       child: InkWell(
         onTap: (){
-          Navigator.pushNamed(context, EzabyPharmacy.routeName);
+          if (index == 0) {
+            Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) {
+                      return EzabyPharmacy();
+                    }));
+          }else if (index == 1) {
+            Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) {
+                      return MisrPharmacy();
+                    }));
+          }else if(index == 2){
+            Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) {
+                      return SeifPharmacy();
+                    }));
+          }else if (index == 3){
+            Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) {
+                      return NineteenPharmacy();
+                    }));
+          }
         },
         child: Container(
           width: width,
-          height: height * .20,
+          height: 140,
           decoration: BoxDecoration(
               color: AppColors.whiteColor,
               borderRadius: BorderRadius.circular(12)),

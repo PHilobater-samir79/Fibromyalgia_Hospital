@@ -6,131 +6,81 @@ import '../../../utils/styles/colors/app_colors.dart';
 import '../../../utils/widgets/custom_arrow_back.dart';
 import '../../../utils/widgets/custom_background.dart';
 
-class EzabyPharmacy extends StatelessWidget{
+class EzabyPharmacy extends StatelessWidget {
   const EzabyPharmacy({super.key});
   static const String routeName = 'EzabyPharmacy';
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.darkBlueColor,
-        body: SafeArea
-        (child:Stack(
+      backgroundColor: AppColors.darkBlueColor,
+      body: SafeArea(
+          child: Stack(
         children: [
-        const CustomBackground(),
-    Padding(
-    padding:const EdgeInsets.only(right: 20.0, left: 20),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    const Padding(
-    padding: EdgeInsets.only(top: 20.0),
-    child:Row(
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-    CustomArrowBack(),
-    SizedBox(
-    width: 20,
-    ),
-    Text(
-    AppStrings.backButtom,
-    style: AppTextStyle.styleRegular15,
-    textAlign: TextAlign.center,
-    )
-    ],
-    )
-    ),
-    const SizedBox(
-    height: 20,
-    ),
-    Expanded(
-    child: ListView(
-    children: [
-    Padding(
-    padding: const EdgeInsets.only(top: 8.0),
-    child: Column(
-    children: [
-    Container(
-    width: 50,
-    height: 25,
-    decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(2),
-    ),
-    child:
-    Image.asset(AppAssets.ezabyLogo),
-    ),
-    const SizedBox(
-    width: 10,
-    ),
-    const SizedBox(
-    width: 600,
-    child: Padding(
-    padding:  EdgeInsets.only(top: 3.0),
-    child: Column(
-    mainAxisAlignment:
-    MainAxisAlignment.start,
-    crossAxisAlignment:
-    CrossAxisAlignment.start,
-    children: [
-    Column(
-    children: [
-    Text(
-    "25% Off",
-    style: TextStyle(color: Colors.white,
-    fontSize: 25,
-    fontWeight: FontWeight.bold,
-    letterSpacing: 1,
-    wordSpacing: 2,)
-
-    ),
-
-    ],
-    ),
-    SizedBox(),
-    Text(
-    "Get 25% off of purchases.\n Scan the Qr code from your nearest branch",
-    style: TextStyle(color: Colors.white70,
-    fontSize: 18,
-      fontWeight: FontWeight.normal,
-      wordSpacing: 1,)
-    ),
-
-    ],
-    ),
-    ),
-    )
-    ],
-    ),
-
-
-
-
-    )
-    ],
-    ))
-
-
-    ],
-    ),
-    ),
-          SizedBox(height: 20,),
-          const Padding(
-            padding:   EdgeInsets.only(right: 5, left: 5),
+          const CustomBackground(),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width:50,
-                  height: 80,
+                Padding(
+                    padding: const EdgeInsets.only(top: 20.0, left: 10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const CustomArrowBack(),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          AppStrings.backButtom,
+                          style: AppTextStyle.styleRegular15
+                              .copyWith(color: AppColors.appBackgroundColor),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    )),
+                const SizedBox(
+                  height: 100,
                 ),
-                Icon(Icons.qr_code_2_rounded)
-
+                Center(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * .7,
+                    height: 130,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    child: Image.asset(AppAssets.ezabyLogo),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                    "Get 25% off of purchases.\n Scan the Qr code from your nearest branch",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                      wordSpacing: 1,
+                    )),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Center(
+                    child: Icon(
+                  Icons.qr_code_2_rounded,
+                  color: AppColors.appBackgroundColor,
+                  size: 200,
+                )),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             ),
-
           )
-
-
         ],
-        )),
-
+      )),
     );
-  }}
+  }
+}
