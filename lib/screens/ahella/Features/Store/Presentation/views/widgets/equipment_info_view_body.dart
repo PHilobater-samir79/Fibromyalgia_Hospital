@@ -37,7 +37,7 @@ class EquipmentInfoViewBody extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: CustomElevatedButton(
-              text: 'Next',
+              text: 'Go to Cart',
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const CartView()),
               ),

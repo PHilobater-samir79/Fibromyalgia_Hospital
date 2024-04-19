@@ -60,15 +60,11 @@ class DiagnosticsItemFooter extends StatelessWidget {
           CustomElevatedButton(
             text: 'Book Now',
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) {
-                  return const PatientDetailsScreen();
-                },
-              ));
-            },
-          ),
-        ],
-      ),
-    );
+              Navigator.pushReplacementNamed(
+                  context, PatientDetailsScreen.routeName);
+            })
+          ]));
+
+
   }
 }

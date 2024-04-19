@@ -1,3 +1,4 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Presentation/views/diagnostics_book_view.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_setting/patient_profile/custom_profile_text_field.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
@@ -7,6 +8,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../patient_home/patient_home_screen.dart';
 
 class PatientDetailsScreen extends StatefulWidget {
   const PatientDetailsScreen({super.key});
@@ -174,7 +177,10 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                   const Expanded(
                     child: SizedBox(),
                   ),
-                  const CustomButton(text: 'Done'),
+                 // InkWell(Navigator.pushReplacementNamed(context,DiagnosticsBookView.routeName)),
+                   InkWell(onTap: (){
+                     Navigator.pushReplacementNamed(context, PatientHomeScreen.routeName);
+                   },child: CustomButton(text: 'Done',)),
                   const SizedBox(
                     height: 40,
                   ),

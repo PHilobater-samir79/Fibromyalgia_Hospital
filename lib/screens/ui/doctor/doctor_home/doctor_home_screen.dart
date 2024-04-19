@@ -11,6 +11,7 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 
+import '../../../ahella/Features/Diagnostics/Presentation/views/diagnostics_book_view.dart';
 import '../doctor_patient/data/patientappointmentmodel.dart';
 
 class DoctorHomeScreen extends StatelessWidget {
@@ -107,7 +108,7 @@ class DoctorHomeScreen extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const LaboratoriesView(),
+                                                  const DiagnosticsBookView(),
                                             ),
                                           );
                                         } else if (index == 2) {
@@ -137,7 +138,7 @@ class DoctorHomeScreen extends StatelessWidget {
                                                 CategoryModel
                                                     .itemServices[index]
                                                     .imagePath,
-                                                fit: BoxFit.scaleDown,
+                                                fit: BoxFit.scaleDown,height: 50, width: 210,
                                               ),
                                               const SizedBox(
                                                 height: 10,

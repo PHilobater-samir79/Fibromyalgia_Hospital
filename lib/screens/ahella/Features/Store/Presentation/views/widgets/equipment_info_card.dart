@@ -50,18 +50,19 @@ class EquipmentInfoCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('\$${storeModel.price}'),
+                      Text('\£${storeModel.price}'),
                       RatingBar.builder(
-                        unratedColor: const Color(0xffE2E5EA),
                         itemSize: 20,
-                        ignoreGestures: true,
-                        initialRating: 4,
-                        itemCount: 5,
+                        initialRating: 1,
+                        minRating: 0,
                         direction: Axis.horizontal,
-                        itemPadding: const EdgeInsets.symmetric(horizontal: 2),
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding:
+                        const EdgeInsets.symmetric(horizontal: 1.0),
                         itemBuilder: (context, _) => const Icon(
                           Icons.star,
-                          color: Color(0xffF6D060),
+                          color: Colors.amber,
                         ),
                         onRatingUpdate: (rating) {},
                       ),

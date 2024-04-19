@@ -2,6 +2,7 @@ import 'package:fibromyalgia_hospital/screens/ahella/Core/helpers/show_successfu
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_text_form_field.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentation/views/payment_options_view.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentation/views/widgets/payment_option_is_selected_leading_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -143,10 +144,15 @@ class CreditDetailsViewBody extends StatelessWidget {
               children: [
                 Expanded(
                   child: CustomElevatedButton(
-                    text: 'Cancel',
-                    onPressed: () {},
-                  ),
-                ),
+                    text: 'Cancel',onPressed: () {
+              Navigator.push(
+                  context,MaterialPageRoute(builder: (context){return PaymentOptionsView();}));
+            })
+                   // onPressed: () => Navigator.of(context).push(
+            //MaterialPageRoute(builder: (context) => const PaymentOptionsView()),
+          //),
+    ),
+
                 const SizedBox(width: 20),
                 Expanded(
                   child: CustomElevatedButton(

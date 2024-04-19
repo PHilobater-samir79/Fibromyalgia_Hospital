@@ -42,13 +42,9 @@ class DiagnosticsBookViewBody extends StatelessWidget {
           child: CustomElevatedButton(
             text: 'Book Now',
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const DiagnosticsTestView(),
-                ),
-              );
-            },
-          ),
+    Navigator.push(
+    context,MaterialPageRoute(builder: (context){return DiagnosticsTestView();}));
+    })
         ),
         const Spacer(),
       ],

@@ -8,7 +8,7 @@ class CategoryModel {
 
   static List <CategoryModel> itemServices = [
     CategoryModel(imagePath: "assets/images/pharmacy_icon.png", name: AppStrings.pharmacy),
-    CategoryModel(imagePath: "assets/images/lab_icon.png", name: AppStrings.laboratory),
+    CategoryModel(imagePath: "assets/images/blood-test.png", name: AppStrings.diagnostics),
     CategoryModel(imagePath: "assets/images/store_icon.png", name: AppStrings.store),
   ] ;
 

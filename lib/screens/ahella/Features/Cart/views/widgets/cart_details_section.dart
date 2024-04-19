@@ -61,7 +61,7 @@ class CartDetailsSection extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    '- \$200',
+                    '- \£200',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
                 ],

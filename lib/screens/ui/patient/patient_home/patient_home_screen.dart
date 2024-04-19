@@ -1,3 +1,4 @@
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Presentation/views/diagnostics_book_view.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/laboratories_view.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Home/Presentation/views/main_home_view.dart';
@@ -200,7 +201,7 @@ class PatientHomeScreen extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const LaboratoriesView(),
+                                                const DiagnosticsBookView(),
                                           ),
                                         );
                                       } else if (index == 2) {
@@ -226,8 +227,10 @@ class PatientHomeScreen extends StatelessWidget {
                                           Image.asset(
                                             CategoryModel
                                                 .itemServices[index].imagePath,
-                                            fit: BoxFit.scaleDown,
+                                            fit: BoxFit.scaleDown, height: 50, width: 210,
+
                                           ),
+
                                           const SizedBox(
                                             height: 10,
                                           ),

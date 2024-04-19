@@ -122,7 +122,7 @@ class AppStrings {
   static const String findYourDoctor = 'Find Your Doctor';
   static const String ourServices = 'Our Services';
   static const String pharmacy = 'Pharmacy';
-  static const String laboratory = 'Laboratory';
+  static const String diagnostics = 'Diagnostic Tests';
   static const String store = 'Store';
   static const String scheduleAppointment = 'Schedule Appointment';
   static const String appointmentFor = 'Appointment For';

@@ -54,7 +54,7 @@ class CartItem extends StatelessWidget {
                       width: 16,
                       height: 16,
                       decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.purple[200],
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
@@ -62,28 +62,40 @@ class CartItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '\$ ${StoreModel.all[2].price.toString()}',
+                  '\£ ${StoreModel.all[2].price.toString()}',
                   style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                const Center(
-                  child: Row(
-                    children: [
-                      Icon(Icons.remove),
-                      SizedBox(width: 8),
-                      Text('1'),
-                      SizedBox(width: 8),
-                      Icon(Icons.add),
-                    ],
-                  ),
-                )
+                  Center(
+                   child: Row(
+                     children: [
+                       IconButton(
+                         iconSize: 30,
+                         icon:Icon(Icons.remove), onPressed: () {},
+
+                       ),
+                       SizedBox(width: 8),
+                       Text('1'),
+                       SizedBox(width: 8),
+                       IconButton(
+                         iconSize: 30,
+                         icon:Icon(Icons.add), onPressed: () {},
+
+                       )                     ],
+
+                   ),
+                 )
               ],
             ),
           ),
-          const Icon(Icons.more_vert_rounded)
+           IconButton(
+             iconSize: 30,
+             icon:Icon(Icons.remove_circle_outline), onPressed: () {},
+
+           )
         ],
       ),
     );

@@ -3,8 +3,14 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class CustomNotificationContainer extends StatelessWidget {
-  const CustomNotificationContainer({super.key});
+import '../../screens/ui/general_screen/notficationmodel.dart';
+
+
+  class CustomNotificationContainer extends StatelessWidget {
+  final int index ;
+  const CustomNotificationContainer({super.key,
+  required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +47,7 @@ class CustomNotificationContainer extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    '12:55 PM',
+                    NotificationModel.patientnoti[index].Time,
                     style: AppTextStyle.styleRegular15.copyWith(
                         color: AppColors.blackTextColor,
                         fontSize: 16,
@@ -55,8 +61,8 @@ class CustomNotificationContainer extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Scheduled Appointment',
+                   Text(
+                    NotificationModel.patientnoti[index].Name,
                     style: AppTextStyle.styleMedium18,
                   ),
                   const SizedBox(
@@ -64,8 +70,8 @@ class CustomNotificationContainer extends StatelessWidget {
                   ),
                   SizedBox(
                     width: width * .65,
-                    child: const Text(
-                      'Are yor ready to see your Doctor ? \nyou should be ready to visit DR.Philobater samir in his clinic tomorrow at 7 pm ',
+                    child:  Text(
+                      NotificationModel.patientnoti[index].Message,
                       style: AppTextStyle.styleRegular15,
                       maxLines: 5,
                       textAlign: TextAlign.start,

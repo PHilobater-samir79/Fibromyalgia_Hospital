@@ -6,6 +6,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 
+import 'notficationmodel.dart';
+
 class NotificationsScreen extends StatefulWidget {
   static const String routeName = 'NotificationsScreen';
 
@@ -62,9 +64,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   ),
                   Expanded(
                       child: ListView.builder(
-                    itemCount: 10,
+                        itemCount: NotificationModel.patientnoti.length,
                     itemBuilder: (context, index) {
-                      return const CustomNotificationContainer();
+                      return  CustomNotificationContainer(index: index,);
                     },
                   ))
                 ],

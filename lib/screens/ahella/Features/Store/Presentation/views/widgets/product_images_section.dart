@@ -40,7 +40,7 @@ class ProductImagesSection extends StatelessWidget {
         ),
         const SizedBox(width: 20),
         CustomElevatedButton(
-          text: 'Buy now',
+          text: 'Add To Cart',
           onPressed: () {},
         ),
       ],

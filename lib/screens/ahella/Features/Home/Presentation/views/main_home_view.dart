@@ -52,7 +52,7 @@ List<Widget> _buildScreens(BuildContext context) {
     const StoreView(),
     const SizedBox(),
     const SizedBox(),
-    const LaboratoriesView(), // TODO: change it to the chat view
+    // const LaboratoriesView(), // TODO: change it to the chat view
   ];
 }
 
