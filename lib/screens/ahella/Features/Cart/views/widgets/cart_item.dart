@@ -1,8 +1,16 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Data/Models/store_model.dart';
 import 'package:flutter/material.dart';
 
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   const CartItem({super.key});
+
+  @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+
+  int productNum=1;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +70,7 @@ class CartItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '\£ ${StoreModel.all[2].price.toString()}',
+                  '£ ${StoreModel.all[2].price.toString()}',
                   style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
@@ -74,15 +82,24 @@ class CartItem extends StatelessWidget {
                      children: [
                        IconButton(
                          iconSize: 30,
-                         icon:Icon(Icons.remove), onPressed: () {},
+                         icon:const Icon(Icons.remove), onPressed: () {
+                           setState(() {
+                             productNum--;
+                           });
+                       },
 
                        ),
-                       SizedBox(width: 8),
-                       Text('1'),
-                       SizedBox(width: 8),
+                       const SizedBox(width: 8),
+                       Text(" $productNum"),
+
+                       const SizedBox(width: 8),
                        IconButton(
                          iconSize: 30,
-                         icon:Icon(Icons.add), onPressed: () {},
+                         icon:const Icon(Icons.add), onPressed: () {
+                           setState(() {
+                             productNum++;
+                           });
+                       },
 
                        )                     ],
 
@@ -93,7 +110,7 @@ class CartItem extends StatelessWidget {
           ),
            IconButton(
              iconSize: 30,
-             icon:Icon(Icons.remove_circle_outline), onPressed: () {},
+             icon:const Icon(Icons.remove_circle_outline), onPressed: () {},
 
            )
         ],
