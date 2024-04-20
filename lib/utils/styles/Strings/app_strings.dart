@@ -99,6 +99,8 @@ class AppStrings {
   static const String textMessages = 'Text messages';
   static const String phoneCalls = 'Phone calls';
   static const String languages = 'Languages';
+  static const String region = 'Region';
+  static const String cairo = 'Cairo';
   static const String english = 'English';
   static const String currency = "Currency";
   static const String usd = r'$-USD';

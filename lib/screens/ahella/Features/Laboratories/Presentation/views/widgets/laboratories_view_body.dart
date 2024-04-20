@@ -1,8 +1,5 @@
 // import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_header_section.dart';
 // import 'package:fibromyalgia_hospital/screens/ahella/Features/Diagnostics/Presentation/views/diagnostics_book_view.dart';
-// import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/widgets/lab_category_section.dart';
-// import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/widgets/lab_list_view.dart';
-// import 'package:fibromyalgia_hospital/screens/ahella/Features/Laboratories/Presentation/views/widgets/lab_search_section.dart';
 // import 'package:flutter/material.dart';
 // class LaboratoriesViewBody extends StatelessWidget {
 //   const LaboratoriesViewBody({
@@ -55,4 +52,3 @@
 //     );
 //   }
 // }
-//

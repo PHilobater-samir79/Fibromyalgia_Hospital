@@ -43,7 +43,7 @@ class CartViewBody extends StatelessWidget {
           const SizedBox(height: 44),
           const CartItemsSection(),
           const SizedBox(height: 44),
-          const CartDetailsSection(),
+           CartDetailsSection(),
           const SizedBox(height: 44),
           const CartFooterSection(),
           const SizedBox(height: 20),
