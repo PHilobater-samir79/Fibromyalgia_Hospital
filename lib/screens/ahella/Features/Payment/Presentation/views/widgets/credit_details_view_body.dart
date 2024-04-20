@@ -145,9 +145,9 @@ class CreditDetailsViewBody extends StatelessWidget {
                 Expanded(
                   child: CustomElevatedButton(
                     text: 'Cancel',onPressed: () {
-              Navigator.push(
-                  context,MaterialPageRoute(builder: (context){return PaymentOptionsView();}));
-            })
+                    Navigator.pushReplacement(
+                        context,MaterialPageRoute(builder: (context){return PaymentOptionsView();}));
+                  })
                    // onPressed: () => Navigator.of(context).push(
             //MaterialPageRoute(builder: (context) => const PaymentOptionsView()),
           //),

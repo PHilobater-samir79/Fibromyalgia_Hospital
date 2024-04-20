@@ -12,7 +12,8 @@ class CustomChatContainer extends StatefulWidget {
       {super.key,
       required this.title,
       required this.subtitle,
-      required this.imagePath});
+      required this.imagePath
+  });
 
   @override
   State<CustomChatContainer> createState() => _CustomChatContainerState();

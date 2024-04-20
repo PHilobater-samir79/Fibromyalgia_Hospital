@@ -1,3 +1,4 @@
+import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_chat/data/doctorchatmodel.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_chat/doctor_messages_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
@@ -41,16 +42,16 @@ class DoctorChatScreen extends StatelessWidget {
                   ),
                   Expanded(
                       child: ListView.builder(
-                    itemCount: 10,
+                        itemCount: DoctorChatModel.chat.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: (){
                           Navigator.pushNamed(context, PatientMessagesScreen.routeName);
                         },
-                        child: const CustomChatContainer(
-                          subtitle: 'Hello doctor',
-                          title: 'Ahmed Mohsen',
-                          imagePath: AppAssets.circlePatientPhoto,
+                        child:  CustomChatContainer(
+                          subtitle:DoctorChatModel.chat[index].Message,
+                          title:DoctorChatModel.chat[index].Name,
+                          imagePath:DoctorChatModel.chat[index].imagePath,
                         ),
                       );
                     },

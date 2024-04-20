@@ -82,12 +82,8 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             children: [
               Expanded(
                 child: CustomElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const CreditDetailsView(),
-                      ),
-                    );
+                  onPressed: () {Navigator.pushReplacement(
+                      context,MaterialPageRoute(builder: (context){return CreditDetailsView();}));
                   },
                   text: 'Pay',
                 ),

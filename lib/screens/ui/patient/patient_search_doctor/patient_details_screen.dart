@@ -9,7 +9,7 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../patient_home/patient_home_screen.dart';
+import '../../../ahella/Features/Diagnostics/Presentation/views/diagonstics_tests_view.dart';
 
 class PatientDetailsScreen extends StatefulWidget {
   const PatientDetailsScreen({super.key});
@@ -178,8 +178,8 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                     child: SizedBox(),
                   ),
                  // InkWell(Navigator.pushReplacementNamed(context,DiagnosticsBookView.routeName)),
-                   InkWell(onTap: (){
-                     Navigator.pushReplacementNamed(context, PatientHomeScreen.routeName);
+                   InkWell(onTap: () {Navigator.pushReplacement(
+                       context,MaterialPageRoute(builder: (context){return DiagnosticsTestView();}));
                    },child: CustomButton(text: 'Done',)),
                   const SizedBox(
                     height: 40,

@@ -50,7 +50,7 @@ class _DoctorMessageScreenState extends State<DoctorMessageScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Dr.nahla Samir',
+                            'Dr.Shady Ali',
                             style: AppTextStyle.styleMedium18,
                           ),
                           SizedBox(

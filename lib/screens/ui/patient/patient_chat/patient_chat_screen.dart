@@ -7,6 +7,8 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 
+import '../../doctor/doctor_chat/data/doctorchatmodel.dart';
+
 class PatientChatScreen extends StatelessWidget {
   const PatientChatScreen({super.key});
   static const String routeName = 'PatientChatScreen';
@@ -40,16 +42,16 @@ class PatientChatScreen extends StatelessWidget {
                   ),
                   Expanded(
                       child: ListView.builder(
-                    itemCount: 10,
+                        itemCount: DoctorChatModel.patient.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: (){
                           Navigator.pushNamed(context, DoctorMessageScreen.routeName);
                         },
-                        child: const CustomChatContainer(
-                          subtitle: 'Hello dear patient',
-                          title: 'Dr.Ahmed Mohsen',
-                          imagePath: AppAssets.doctorPhoto,
+                        child:  CustomChatContainer(
+                          subtitle:DoctorChatModel.patient[index].Message,
+                          title: DoctorChatModel.patient[index].Name,
+                          imagePath: DoctorChatModel.patient[index].imagePath,
                         ),
                       );
                     },
