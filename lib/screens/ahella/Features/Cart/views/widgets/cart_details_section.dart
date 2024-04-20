@@ -1,11 +1,13 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Core/theming/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../../../utils/data/setting_model.dart';
 import '../../../../../../utils/styles/Strings/app_strings.dart';
 import '../../../../../../utils/styles/Text_style/app_text_style.dart';
 import '../../../../../../utils/styles/colors/app_colors.dart';
+import '../../../../../ui/patient/patient_setting/patient_profile/custom_profile_text_field.dart';
 
 
 class CartDetailsSection extends StatefulWidget {
@@ -17,6 +19,10 @@ class CartDetailsSection extends StatefulWidget {
 
 class _CartDetailsSectionState extends State<CartDetailsSection> {
   bool isChecked = false;
+  Object? val = -1;
+  String? selectedValue;
+  String dropdownValue = 'one';
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,106 +37,286 @@ class _CartDetailsSectionState extends State<CartDetailsSection> {
           ),
           child: Row(
             children: [
-              SvgPicture.asset('assets/images/address.svg', width: 28, height: 29),
-              const SizedBox(width: 30),
-               Column(
+
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Address',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 5),
                   Row(
-                    children: [
-                      const Text(
-                        'Region',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 17.0, right: 17),
-                        child: InkWell(
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text(
-                                    'Choose your Region',
-                                    style: AppTextStyle.styleMedium18,
-                                  ),
-                                  content: SizedBox(
-                                    height: 250,
-                                    width: 50,
-                                    child: ListView.builder(
-                                        itemBuilder: (context, index) {
-                                          return Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
+                      children: [
+                        SvgPicture.asset('assets/images/Personalinfo.svg'),
+                        const SizedBox(width: 30),
+                        const Text(
+                          'Personal Information',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                      ]
+                  ),
+                  const SizedBox(height: 15),
+                  const SizedBox(width: 30),
+                  Container(
+
+                    width: MediaQuery
+                        .of(context).size.width * 0.85,
+                    height: MediaQuery.of(context).size.height * .6,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: AppColors.whiteColor),
+                    child: Padding(
+                      padding:
+                      const EdgeInsets.only(top: 15.0, right: 8, left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+
+                          const CustomProfileTextField(
+                              icon: Iconsax.personalcard,
+                              labelName: AppStrings.name),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const CustomProfileTextField(
+                              icon: Icons.phone,
+                              labelName: AppStrings.contactNumber),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const CustomProfileTextField(
+                              icon: Icons.email, labelName: AppStrings.email),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          // TextFormField(
+                          //
+                          //   readOnly: true,
+                          //   decoration: InputDecoration(
+                          //       filled: true,
+                          //       fillColor: AppColors.whiteColor,
+                          //
+                          //     focusedBorder: OutlineInputBorder(
+                          //         borderRadius: BorderRadius.circular(10),
+                          //         borderSide: const BorderSide(color: AppColors.greenColor)),
+                          //     enabledBorder: OutlineInputBorder(
+                          //         borderRadius: BorderRadius.circular(10),
+                          //         borderSide: const BorderSide(color: AppColors.greyWhite)),
+                          //     labelText: AppStrings.region ,
+                          //     labelStyle: const TextStyle(color: AppColors.greenColor,fontSize: 17),
+                          //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                          //   ),
+                          // ),
+                          const CustomProfileTextField(
+                              icon: Icons.home,
+                              labelName: AppStrings.address),
+
+                          // Text(
+                          //   'Gander',
+                          //   style: AppTextStyle.styleMedium18,
+                          // ),
+                          // SizedBox(
+                          //   height: 10,
+                          // ),
+                          // Row(
+                          //   children: [
+                          //     Row(
+                          //       children: [
+                          //         Radio(
+                          //             value: 'male',
+                          //             activeColor: AppColors.greenColor,
+                          //             groupValue: val,
+                          //             onChanged: (value) {
+                          //               setState(() {
+                          //                 val = value;
+                          //               });
+                          //             }),
+                          //         Text(
+                          //           'Male',
+                          //           style: AppTextStyle.styleRegular15.copyWith(
+                          //               color: AppColors.blackTextColor,
+                          //               fontWeight: FontWeight.bold),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //     const SizedBox(
+                          //       width: 5,
+                          //     ),
+                          //     Row(
+                          //       children: [
+                          //         Radio(
+                          //             value: 'female',
+                          //             activeColor: AppColors.greenColor,
+                          //             groupValue: val,
+                          //             onChanged: (value) {
+                          //               setState(() {
+                          //                 val = value;
+                          //               });
+                          //             }),
+                          //         Text(
+                          //           'Female',
+                          //           style: AppTextStyle.styleRegular15.copyWith(
+                          //               color: AppColors.blackTextColor,
+                          //               fontWeight: FontWeight.bold),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //     const SizedBox(
+                          //       width: 5,
+                          //     ),
+                          //     Row(
+                          //       children: [
+                          //         Radio(
+                          //             value: 'others',
+                          //             activeColor: AppColors.greenColor,
+                          //             groupValue: val,
+                          //             onChanged: (value) {
+                          //               setState(() {
+                          //                 val = value;
+                          //               });
+                          //             }),
+                          //         Text(
+                          //           'Others',
+                          //           style: AppTextStyle.styleRegular15.copyWith(
+                          //               color: AppColors.blackTextColor,
+                          //               fontWeight: FontWeight.bold),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ],
+                          // ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+
+                          Row(
+                            children: [
+                              const SizedBox(width: 15),
+                              const Text(
+                                'Region',
+                                style: TextStyle(
+                                    color: MyColors.green, fontSize: 18),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 17.0, right: 17),
+                                child: InkWell(
+                                  onTap: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Choose your Region',
+                                            style: AppTextStyle.styleMedium18,
+                                          ),
+                                          content: SizedBox(
+                                            height: 250,
+                                            width: 50,
+                                            child: ListView.builder(
+                                                itemBuilder: (context, index) {
+                                                  return Row(
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                        SettingModel
+                                                            .regionitem[index]
+                                                            .title,
+                                                        style: AppTextStyle
+                                                            .styleRegular15
+                                                            .copyWith(
+                                                            color: AppColors
+                                                                .blackTextColor),
+                                                      ),
+                                                      Checkbox(
+                                                        activeColor:
+                                                        AppColors.greenColor,
+                                                        value: isChecked,
+                                                        onChanged: (value) {
+                                                          setState(() {
+                                                            isChecked = value!;
+                                                          });
+                                                        },
+                                                      )
+                                                    ],
+                                                  );
+                                                },
+                                                itemCount: SettingModel
+                                                    .regionitem.length),
+                                          ),
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                                'Cancel',
+                                                style: TextStyle(
+                                                    color: AppColors
+                                                        .greenColor),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            TextButton(
+                                              child: const Text(
+                                                'Confirm',
+                                                style: TextStyle(
+                                                    color: AppColors
+                                                        .greenColor),
+                                              ),
+                                              onPressed: () {
+                                                // Handle the confirm action
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceBetween,
+                                    children: [
+                                      Container(
+                                          padding: const EdgeInsets.only(left: 13.0, right: 13.0, top: 5.0, bottom: 5.0),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(
+                                                11),
+                                            border: Border.all(
+                                                color: Colors.grey
+                                                    .withOpacity(0.5)),
+                                          ),
+                                          child: const Row(
+                                            mainAxisAlignment: MainAxisAlignment
                                                 .spaceBetween,
-                                            children: [
-                                              Text(
-                                                SettingModel
-                                                    .regionitem[index].title,
+                                            children: [Text(AppStrings.cairo,
                                                 style: AppTextStyle
                                                     .styleRegular15
-                                                    .copyWith(
-                                                    color: AppColors
-                                                        .blackTextColor),
-                                              ),
-                                              Checkbox(
-                                                activeColor:
-                                                AppColors.greenColor,
-                                                value: isChecked,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    isChecked = value!;
-                                                  });
-                                                },
-                                              )
+                                            ),
+                                              SizedBox(width: 7),
+                                              Icon(Icons.arrow_drop_down,
+                                                  color: Colors.grey)
                                             ],
-                                          );
-                                        },
-                                        itemCount: SettingModel.regionitem.length ),
+                                          )
+
+                                      ),
+
+                                    ],
                                   ),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      child: const Text(
-                                        'Cancel',
-                                        style: TextStyle(
-                                            color: AppColors.greenColor),
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                    TextButton(
-                                      child: const Text(
-                                        'Confirm',
-                                        style: TextStyle(
-                                            color: AppColors.greenColor),
-                                      ),
-                                      onPressed: () {
-                                        // Handle the confirm action
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          },
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(AppStrings.cairo,
-                                  style: AppTextStyle.styleRegular15),
-                              Icon(Icons.arrow_drop_down),
+                                ),
+                              ),
+
                             ],
                           ),
-                        ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          )
+                        ],
                       ),
-
-                    ],
+                    ),
                   ),
 
 
@@ -193,7 +379,7 @@ class _CartDetailsSectionState extends State<CartDetailsSection> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    '- \£200',
+                    '- £200',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
                 ],

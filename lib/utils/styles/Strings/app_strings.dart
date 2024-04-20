@@ -84,6 +84,7 @@ class AppStrings {
       'Update your profile now Dear, Doctor';
   static const String profile = 'Profile';
   static const String personalInformation = 'Personal information';
+  static const String address = 'Address';
   static const String contactNumber = 'Contact Number';
   static const String dateOfBirth = 'Date of birth';
   static const String addBiography = 'Add biography';
@@ -101,6 +102,7 @@ class AppStrings {
   static const String languages = 'Languages';
   static const String region = 'Region';
   static const String cairo = 'Cairo';
+  static const String AlMonufia = 'Al Monufia';
   static const String english = 'English';
   static const String currency = "Currency";
   static const String usd = r'$-USD';

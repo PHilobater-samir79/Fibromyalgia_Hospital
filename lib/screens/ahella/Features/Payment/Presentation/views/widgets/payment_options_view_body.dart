@@ -11,7 +11,6 @@ class PaymentOptionsViewBody extends StatefulWidget {
 }
 
 class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
-  bool isInstapaySelected = false;
   bool isVisaSelected = false;
   bool isCashSelected = false;
   @override
@@ -31,19 +30,8 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             ),
           ),
           const SizedBox(height: 34),
-          SelectPaymentOptionWidget(
-            title: 'Instapay',
-            isSelected: isInstapaySelected,
-            trailing: Image.asset('assets/ahella/Instapayai.png', width:48, height:48),
-            onTap: () {
-              setState(() {
-                isInstapaySelected = !isInstapaySelected;
-                isVisaSelected = false;
-                isCashSelected = false;
-              });
-            },
-          ),
-          const SizedBox(height: 14),
+
+
           SelectPaymentOptionWidget(
             title: 'Visa',
             isSelected: isVisaSelected,
@@ -58,7 +46,6 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             onTap: () {
               setState(() {
                 isVisaSelected = !isVisaSelected;
-                isInstapaySelected = false;
                 isCashSelected = false;
               });
             },
@@ -73,7 +60,6 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
               setState(() {
                 isCashSelected =  !isCashSelected;
                 isVisaSelected = false;
-                isInstapaySelected = false;
               });
             },
           ),
