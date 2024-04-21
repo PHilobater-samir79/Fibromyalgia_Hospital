@@ -3,6 +3,8 @@ import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentati
 import 'package:fibromyalgia_hospital/screens/ahella/Features/Payment/Presentation/views/widgets/select_payment_option_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../../Core/helpers/show_successful_order_dialog.dart';
 class PaymentOptionsViewBody extends StatefulWidget {
   const PaymentOptionsViewBody({super.key});
 
@@ -44,6 +46,7 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             ),
 
             onTap: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return CreditDetailsView(); }));
               setState(() {
                 isVisaSelected = !isVisaSelected;
                 isCashSelected = false;
@@ -68,8 +71,8 @@ class _PaymentOptionsViewBodyState extends State<PaymentOptionsViewBody> {
             children: [
               Expanded(
                 child: CustomElevatedButton(
-                  onPressed: () {Navigator.pushReplacement(
-                      context,MaterialPageRoute(builder: (context){return CreditDetailsView();}));
+                  onPressed: () {
+                    showSuccessfulOrderDialog(context);
                   },
                   text: 'Pay',
                 ),

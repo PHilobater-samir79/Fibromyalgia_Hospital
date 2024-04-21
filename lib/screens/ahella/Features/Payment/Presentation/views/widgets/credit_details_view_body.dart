@@ -18,7 +18,8 @@ class CreditDetailsViewBody extends StatelessWidget {
         children: [
           CustomHeaderSection(
             title: 'Credit Details',
-            onTap: () => Navigator.pop(context),
+            onTap: () => Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context){return PaymentOptionsView();}))
           ),
           const SizedBox(height: 30),
           Container(

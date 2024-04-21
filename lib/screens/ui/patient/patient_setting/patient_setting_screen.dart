@@ -1,6 +1,7 @@
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/Notifications_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/help_center_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/privacy_and_policy_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_setting/patient_profile/profile_patient_screen.dart';
 import 'package:fibromyalgia_hospital/utils/data/setting_model.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
@@ -442,7 +443,9 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                                         style: TextStyle(
                                             color: AppColors.greenColor),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {Navigator.pushReplacement(context,
+                                          MaterialPageRoute(builder: (context){return JoinUsScreen();}));
+                                      },
                                     ),
                                   ],
                                 );

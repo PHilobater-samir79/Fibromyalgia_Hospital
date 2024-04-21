@@ -14,7 +14,7 @@ class SettingModel {
     SettingModel(title: 'EG-Egypt')
   ];
 
-  static List<SettingModel> regionitem = [
+  static List<SettingModel> regionItem = [
     SettingModel(title: 'Al Beheira'),
     SettingModel(title: 'Al Daqahliya'),
     SettingModel(title: 'Al Fayoum'),

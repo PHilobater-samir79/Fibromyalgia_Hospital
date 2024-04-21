@@ -1,4 +1,5 @@
 import 'package:fibromyalgia_hospital/screens/ahella/Core/widgets/custom_elevated_button.dart';
+import 'package:fibromyalgia_hospital/screens/ahella/Features/Store/Presentation/views/store_view.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/general_doctor_home_screen.dart';
 import 'package:fibromyalgia_hospital/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ Future<dynamic> showSuccessfulOrderDialog(BuildContext context) {
             ),
             const SizedBox(height: 8),
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return StoreView(); })),
               child: const Text(
                 'Continue ',
                 style: TextStyle(

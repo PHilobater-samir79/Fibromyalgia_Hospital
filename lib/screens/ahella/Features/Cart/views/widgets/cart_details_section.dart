@@ -220,7 +220,7 @@ class _CartDetailsSectionState extends State<CartDetailsSection> {
                                                     children: [
                                                       Text(
                                                         SettingModel
-                                                            .regionitem[index]
+                                                            .regionItem[index]
                                                             .title,
                                                         style: AppTextStyle
                                                             .styleRegular15
@@ -242,7 +242,7 @@ class _CartDetailsSectionState extends State<CartDetailsSection> {
                                                   );
                                                 },
                                                 itemCount: SettingModel
-                                                    .regionitem.length),
+                                                    .regionItem.length),
                                           ),
                                           actions: <Widget>[
                                             TextButton(

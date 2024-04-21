@@ -13,7 +13,7 @@ class CartFooterSection extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       child: CustomElevatedButton(
-        text: 'Add a record',
+        text: 'Go to Payment',
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => const PaymentOptionsView()),
