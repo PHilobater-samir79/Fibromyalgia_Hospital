@@ -4,6 +4,7 @@ import 'package:fibromyalgia_hospital/screens/ui/doctor/general_doctor_home_scre
 import 'package:fibromyalgia_hospital/screens/ui/patient/general_patient_home_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_setting/doctor_setting_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/add_record_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/data/appointmentmodel.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/doctor_appointment_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/doctor_appointment_screen_2.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_chat/doctor_chat_screen.dart';
@@ -90,7 +91,7 @@ class FibromyalgiaApp extends StatelessWidget {
           DoctorAppointmentScreen.routeName: (context) =>
               const DoctorAppointmentScreen(),
           DoctorAppointmentScreen2.routeName: (context) =>
-              const DoctorAppointmentScreen2(),
+               DoctorAppointmentScreen2(index: 50,),
           AddRecordScreen.routeName: (context) => const AddRecordScreen(),
           DoctorDetailsScreen.routeName: (context) =>
               const DoctorDetailsScreen(),

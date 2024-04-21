@@ -1,3 +1,5 @@
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_home/patient_home_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/patient/patient_search_doctor/widgets/book_doctor/data/appointmentmodel.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
@@ -7,8 +9,13 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import 'doctor_appointment_screen.dart';
+
+
 class DoctorAppointmentScreen2 extends StatelessWidget {
-  const DoctorAppointmentScreen2({super.key});
+  final int index ;
+  const DoctorAppointmentScreen2({super.key,required this.index,
+  });
   static const String routeName = 'DoctorAppointmentScreen2' ;
 
   @override
@@ -85,7 +92,7 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                   height: height*.1,
                                   width: width,
                                   child: ListView.builder(
-                                    itemCount: 10,
+                                    itemCount: docAppointmentModel.appointment.length,
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (context, index) {
                                       return Padding(
@@ -93,7 +100,8 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                         child: CircleAvatar(
                                           radius: 50,
                                           backgroundColor: AppColors.lightGreenColor,
-                                          child: Text('12:00 \n PM',
+                                          child: Text(
+                                            docAppointmentModel.appointment[index].Time,
                                               textAlign: TextAlign.center
                                               ,style: AppTextStyle.styleMedium18.copyWith(fontWeight: FontWeight.w400),),
                                         ),
@@ -108,7 +116,7 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                   height: height*.1,
                                   width: width,
                                   child: ListView.builder(
-                                    itemCount: 10,
+                                    itemCount: docAppointmentModel.appointment.length,
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (context, index) {
                                       return Padding(
@@ -116,7 +124,8 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                         child: CircleAvatar(
                                           radius: 50,
                                           backgroundColor: AppColors.greenColor,
-                                          child: Text('25 \n Minute',
+                                          child: Text(
+                                            docAppointmentModel.appointment[index].Minutes,
                                             textAlign: TextAlign.center
                                             ,style: AppTextStyle.styleMedium18.copyWith(color: AppColors.whiteColor,fontWeight: FontWeight.w400),),
                                         ),
@@ -124,7 +133,8 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                     },
                                   )),
                               const SizedBox(height: 20,),
-                              const Center(child: CustomButton(text: 'Confirm'))
+                               Center(child: InkWell(onTap: (){Navigator.pushReplacement(
+                                   context,MaterialPageRoute(builder: (context){return DoctorAppointmentScreen();}));},child: CustomButton(text: 'Confirm')))
 
 
 
