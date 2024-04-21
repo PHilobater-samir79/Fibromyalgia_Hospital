@@ -2,6 +2,7 @@ import 'package:fibromyalgia_hospital/screens/ui/general_screen/Notifications_sc
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/help_center_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/general_screen/privacy_and_policy_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_setting/doctor_profile/profile_doctor_screen.dart';
+import 'package:fibromyalgia_hospital/screens/ui/log_in_and_sign_in/join_us_screen.dart';
 import 'package:fibromyalgia_hospital/utils/data/setting_model.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
@@ -9,6 +10,7 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
 
 class DoctorSettingScreen extends StatefulWidget {
   const DoctorSettingScreen({super.key});
@@ -87,7 +89,8 @@ class _DoctorSettingScreenState extends State<DoctorSettingScreen> {
                     ),
                     InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, NotificationsScreen.routeName);
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context){return NotificationsScreen();}));
                       },
                       child: ListTile(
                         leading: const CircleAvatar(
@@ -431,7 +434,10 @@ class _DoctorSettingScreenState extends State<DoctorSettingScreen> {
                                     style:
                                     TextStyle(color: AppColors.greenColor),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacement(context,
+                                        MaterialPageRoute(builder: (context){return JoinUsScreen();}));
+                                  },
                                 ),
                               ],
                             );
