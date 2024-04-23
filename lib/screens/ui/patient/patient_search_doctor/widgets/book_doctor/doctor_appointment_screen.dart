@@ -201,7 +201,7 @@ class DoctorAppointmentScreen extends StatelessWidget {
                       )),
                   const Expanded(child: SizedBox()),
                   Center(child: CustomButton(text: AppStrings.continueText,onTap: (){
-                    Navigator.pushNamed(context, DoctorAppointmentScreen2.routeName);
+                    Navigator.pushReplacementNamed(context, DoctorAppointmentScreen2.routeName);
                   },)),
                   const SizedBox(height: 30,),
 
