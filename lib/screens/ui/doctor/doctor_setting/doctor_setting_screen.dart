@@ -11,6 +11,8 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'doctornotificationscreen.dart';
+
 
 class DoctorSettingScreen extends StatefulWidget {
   const DoctorSettingScreen({super.key});
@@ -90,7 +92,7 @@ class _DoctorSettingScreenState extends State<DoctorSettingScreen> {
                     InkWell(
                       onTap: (){
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context){return NotificationsScreen();}));
+                            MaterialPageRoute(builder: (context){return DoctorNotificationsScreen();}));
                       },
                       child: ListTile(
                         leading: const CircleAvatar(

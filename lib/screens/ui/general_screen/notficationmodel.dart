@@ -30,8 +30,7 @@ class NotificationModel {
     NotificationModel(
       Name: 'Scheduled Appointment',
       Time: '11:00 Am',
-      Message: 'Are yor ready to see your Doctor ? '
-          '\nyou should be ready to visit Dr. Tarek Elsayed in his clinic today at 2:00 pm',),
+      Message: 'Are yor ready to see your Doctor ? you should be ready to visit Dr. Tarek Elsayed in his clinic today at 2:00 pm',),
 
   ];
   static List<NotificationModel> doctornoti = [
