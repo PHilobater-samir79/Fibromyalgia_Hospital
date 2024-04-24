@@ -12,7 +12,7 @@ class CustomResetPasswordContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height * .55,
+      height: height * .60,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

@@ -39,7 +39,7 @@ class _PatientSignUpState extends State<PatientSignUp> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: height * .15,
+                      height: height * .20,
                     ),
                     Text(
                       AppStrings.patientSignUpTitle,

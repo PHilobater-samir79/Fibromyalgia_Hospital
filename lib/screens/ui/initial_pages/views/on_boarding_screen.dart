@@ -108,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 borderRadius: BorderRadius.circular(12))),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 20),
+                              horizontal: 25.0, vertical: 25),
                           child: Text(
                             OnBoardingModel.onBoardingScreens[index].nextBottom,
                             style: AppTextStyle.styleRegular28

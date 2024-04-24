@@ -9,6 +9,7 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../../../../ahella/Features/Payment/Presentation/views/payment_options_view.dart';
 import 'doctor_appointment_screen.dart';
 
 
@@ -134,7 +135,7 @@ class DoctorAppointmentScreen2 extends StatelessWidget {
                                   )),
                               const SizedBox(height: 20,),
                                Center(child: InkWell(onTap: (){Navigator.pushReplacement(
-                                   context,MaterialPageRoute(builder: (context){return DoctorAppointmentScreen();}));},child: CustomButton(text: 'Confirm')))
+                                   context,MaterialPageRoute(builder: (context){return PaymentOptionsView();}));},child: CustomButton(text: 'Choose Payment Method')))
 
 
 

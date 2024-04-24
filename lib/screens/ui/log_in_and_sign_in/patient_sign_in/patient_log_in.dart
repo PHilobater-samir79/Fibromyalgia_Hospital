@@ -27,12 +27,12 @@ class PatientLogIn extends StatelessWidget {
           const CustomBackground(),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(right: 15, left: 15),
+              padding: const EdgeInsets.only(right: 20, left: 15),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     SizedBox(
-                      height: height * .18,
+                      height: height * .20,
                     ),
                     Text(
                       AppStrings.welcomeBack,
