@@ -10,6 +10,8 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class PatientSettingScreen extends StatefulWidget {
   const PatientSettingScreen({super.key});
@@ -443,7 +445,9 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                                         style: TextStyle(
                                             color: AppColors.greenColor),
                                       ),
-                                      onPressed: () {Navigator.pushReplacement(context,
+                                      onPressed: () async {
+                                        await FirebaseAuth.instance.signOut();
+                                        Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context){return JoinUsScreen();}));
                                       },
                                     ),

@@ -11,6 +11,8 @@ import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class PatientLogIn extends StatelessWidget {
   const PatientLogIn({super.key});
@@ -84,7 +86,19 @@ class PatientLogIn extends StatelessWidget {
                     ),
                     CustomButton(
                         text: AppStrings.login,
-                        onTap: () {
+                        onTap: () async{
+                          try {
+                            final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                                email: AppStrings.email,
+                                password:AppStrings.password,
+                            );
+                          } on FirebaseAuthException catch (e) {
+                            if (e.code == 'user-not-found') {
+                              print('No user found for that email.');
+                            } else if (e.code == 'wrong-password') {
+                              print('Wrong password provided for that user.');
+                            }
+                          }
                           routeHomeName = GeneralPatientHomeScreen.routeName;
                           Navigator.pushNamed(
                               context, GeneralPatientHomeScreen.routeName);
