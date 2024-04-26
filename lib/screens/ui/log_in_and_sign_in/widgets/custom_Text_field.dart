@@ -11,6 +11,7 @@ class CustomTextField extends StatefulWidget {
     this.icon,
     required this.text,
     this.isPass = false,
+
   });
 
   @override

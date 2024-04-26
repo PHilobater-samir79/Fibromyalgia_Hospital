@@ -59,7 +59,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 itemBuilder: (context, index) {
                   return Column(children: [
                     SizedBox(
-                      height: height * .12,
+                      height: height * .10,
                     ),
                     CircleAvatar(
                       radius: width * .43,
@@ -67,7 +67,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           OnBoardingModel.onBoardingScreens[index].imagePath),
                     ),
                     SizedBox(
-                      height: height * .08,
+                      height: height * .05,
                     ),
                     Text(
                       OnBoardingModel.onBoardingScreens[index].title,

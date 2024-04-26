@@ -125,9 +125,7 @@ class _PatientSignUpState extends State<PatientSignUp> {
                               email:AppStrings.email,
                               password:AppStrings.password,
                             );
-                            routeHomeName = GeneralPatientHomeScreen.routeName;
-                            Navigator.pushNamed(
-                                context, GeneralPatientHomeScreen.routeName);
+
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
                               print('The password provided is too weak.');
@@ -137,6 +135,9 @@ class _PatientSignUpState extends State<PatientSignUp> {
                           } catch (e) {
                             print(e);
                           }
+                          routeHomeName = GeneralPatientHomeScreen.routeName;
+                          Navigator.pushNamed(
+                              context, GeneralPatientHomeScreen.routeName);
                         }),
                     TextButton(
                       onPressed: () {
