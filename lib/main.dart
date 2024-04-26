@@ -12,3 +12,4 @@ void main()async {
   await getIt<CacheHelper>().cacheInit();
   runApp(const FibromyalgiaApp());
 }
+

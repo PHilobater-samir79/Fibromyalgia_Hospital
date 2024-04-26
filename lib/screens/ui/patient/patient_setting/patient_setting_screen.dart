@@ -446,7 +446,7 @@ class _PatientSettingScreenState extends State<PatientSettingScreen> {
                                             color: AppColors.greenColor),
                                       ),
                                       onPressed: () async {
-                                        await FirebaseAuth.instance.signOut();
+                                       await FirebaseAuth.instance.signOut();
                                         Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context){return JoinUsScreen();}));
                                       },

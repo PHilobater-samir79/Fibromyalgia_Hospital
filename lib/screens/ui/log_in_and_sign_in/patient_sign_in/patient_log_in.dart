@@ -86,7 +86,7 @@ class PatientLogIn extends StatelessWidget {
                     ),
                     CustomButton(
                         text: AppStrings.login,
-                        onTap: () async{
+                        onTap: ()async {
                           try {
                             final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
                                 email: AppStrings.email,

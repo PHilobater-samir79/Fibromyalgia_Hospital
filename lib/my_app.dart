@@ -38,13 +38,34 @@ import 'package:fibromyalgia_hospital/screens/ui/doctor/doctor_setting/doctor_pr
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_setting/patient_profile/profile_patient_screen.dart';
 import 'package:fibromyalgia_hospital/screens/screens_not_use/select_time_screen.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_setting/patient_setting_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'screens/ui/general_screen/Notifications_screen.dart';
 
-class FibromyalgiaApp extends StatelessWidget {
+class FibromyalgiaApp extends StatefulWidget {
   const FibromyalgiaApp({super.key});
+
+  @override
+  State<FibromyalgiaApp> createState() => _FibromyalgiaAppState();
+}
+
+class _FibromyalgiaAppState extends State<FibromyalgiaApp> {
+  @override
+  void initState() {
+    FirebaseAuth.instance
+        .authStateChanges()
+        .listen((User? user) {
+      if (user == null) {
+        print('=======================User is currently signed out!');
+      } else {
+        print('===================User is signed in!');
+      }
+    });
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {

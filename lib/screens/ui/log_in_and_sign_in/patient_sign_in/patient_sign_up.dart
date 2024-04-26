@@ -119,12 +119,15 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     ),
                     CustomButton(
                         text: AppStrings.signup,
-                        onTap: () async {
+                        onTap: ()async  {
                           try {
                             final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
                               email:AppStrings.email,
                               password:AppStrings.password,
                             );
+                            routeHomeName = GeneralPatientHomeScreen.routeName;
+                            Navigator.pushNamed(
+                                context, GeneralPatientHomeScreen.routeName);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
                               print('The password provided is too weak.');
@@ -134,9 +137,6 @@ class _PatientSignUpState extends State<PatientSignUp> {
                           } catch (e) {
                             print(e);
                           }
-                          routeHomeName = GeneralPatientHomeScreen.routeName;
-                          Navigator.pushNamed(
-                              context, GeneralPatientHomeScreen.routeName);
                         }),
                     TextButton(
                       onPressed: () {
