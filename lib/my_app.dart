@@ -44,6 +44,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'screens/ui/general_screen/Notifications_screen.dart';
 
+
 class FibromyalgiaApp extends StatefulWidget {
   const FibromyalgiaApp({super.key});
 
@@ -83,9 +84,9 @@ class _FibromyalgiaAppState extends State<FibromyalgiaApp> {
               const EnableLocationScreen(),
           JoinUsScreen.routeName: (context) => const JoinUsScreen(),
           PatientSignUp.routeName: (context) => const PatientSignUp(),
-          PatientLogIn.routeName: (context) => const PatientLogIn(),
-          DoctorSignUp.routeName: (context) => const DoctorSignUp(),
-          DoctorLogIn.routeName: (context) => const DoctorLogIn(),
+          PatientLogIn.routeName: (context) =>  PatientLogIn(),
+          DoctorSignUp.routeName: (context) =>  DoctorSignUp(),
+          DoctorLogIn.routeName: (context) =>  DoctorLogIn(),
           FindDoctorsScreen.routeName: (context) => const FindDoctorsScreen(),
           MyDoctorsScreen.routeName: (context) => const MyDoctorsScreen(),
           LocationScreen.routeName: (context) => const LocationScreen(),

@@ -4,11 +4,13 @@ import 'package:iconsax/iconsax.dart';
 
 class CustomTextField extends StatefulWidget {
   final IconData? icon;
+  TextEditingController ?tController = TextEditingController();
   final String text;
   final bool isPass;
-  const CustomTextField({
+   CustomTextField({
     super.key,
     this.icon,
+    required this.tController,
     required this.text,
     this.isPass = false,
   });
@@ -24,6 +26,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: TextFormField(
+        controller: widget.tController ,
+        onChanged: (value){
+          setState(() {
+            widget.tController!.text=value;
+            print(widget.tController);
+          });
+        },
         validator: (value) => value!.isEmpty ? "Requird" : null,
         obscureText: widget.isPass ? obscure : false,
         cursorColor: AppColors.greyTextColor,

@@ -13,8 +13,10 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 
 class DoctorLogIn extends StatelessWidget {
-  const DoctorLogIn({super.key});
+
   static const String routeName = 'DoctorLogIn';
+  TextEditingController ?doctoremailController = TextEditingController();
+  TextEditingController ?doctorpassController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -71,12 +73,12 @@ class DoctorLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .02,
                     ),
-                    const CustomTextField(text: AppStrings.email),
+                    CustomTextField(text: AppStrings.email,tController: doctoremailController),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(
-                      text: AppStrings.password,
+                     CustomTextField(
+                      text: AppStrings.password,tController: doctorpassController,
                       isPass: true,
                     ),
                     SizedBox(

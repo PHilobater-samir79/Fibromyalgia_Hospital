@@ -14,7 +14,8 @@ import 'package:flutter/material.dart';
 class DoctorSignUp extends StatefulWidget {
   static const String routeName = 'DoctorSignUp';
 
-  const DoctorSignUp({super.key});
+   DoctorSignUp({super.key});
+
 
   @override
   State<DoctorSignUp> createState() => _DoctorSignUpState();
@@ -22,7 +23,9 @@ class DoctorSignUp extends StatefulWidget {
 
 class _DoctorSignUpState extends State<DoctorSignUp> {
   late bool currentBool = false;
-
+  TextEditingController ?doctoremailController = TextEditingController();
+  TextEditingController ?doctorpassController = TextEditingController();
+  TextEditingController ?doctornameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -78,16 +81,16 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                    const CustomTextField(text: AppStrings.name),
+                     CustomTextField(text: AppStrings.name,tController: doctoremailController),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(text: AppStrings.email),
+                   CustomTextField(text: AppStrings.email,tController: doctoremailController),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(
-                      text: AppStrings.password,
+                     CustomTextField(
+                      text: AppStrings.password,tController: doctorpassController,
                       isPass: true,
                     ),
                     const SizedBox(

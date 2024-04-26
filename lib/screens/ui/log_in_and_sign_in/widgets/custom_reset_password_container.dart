@@ -6,8 +6,9 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 
 class CustomResetPasswordContainer extends StatelessWidget {
-  const CustomResetPasswordContainer({super.key});
 
+  TextEditingController ?passController = TextEditingController();
+  TextEditingController ?rpassController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -46,9 +47,9 @@ class CustomResetPasswordContainer extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            const CustomTextField(text: AppStrings.newPassword,isPass: true,),
+             CustomTextField(text: AppStrings.newPassword,isPass: true,tController:passController ),
             const SizedBox(height: 5,),
-            const CustomTextField(text: AppStrings.reEnterPassword,isPass: true,),
+             CustomTextField(text: AppStrings.reEnterPassword,isPass: true,tController: rpassController),
             const SizedBox(
               height: 30,
             ),

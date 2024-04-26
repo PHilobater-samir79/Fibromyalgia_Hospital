@@ -15,9 +15,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 
 class PatientLogIn extends StatelessWidget {
-  const PatientLogIn({super.key});
-  static const String routeName = 'PatientLogIn';
 
+  static const String routeName = 'PatientLogIn';
+  TextEditingController ?emailController = TextEditingController();
+  TextEditingController ?passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -73,11 +74,11 @@ class PatientLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .02,
                     ),
-                    const CustomTextField(text: AppStrings.email),
+                     CustomTextField(text: AppStrings.email,tController: emailController),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(
+                     CustomTextField(tController: passController,
                       text: AppStrings.password,
                       isPass: true,
                     ),
@@ -117,7 +118,7 @@ class PatientLogIn extends StatelessWidget {
                             ),
                           ),
                           builder: (context) {
-                            return const CustomResetPasswordContainer();
+                            return  CustomResetPasswordContainer();
                           },
                         );
                       },
