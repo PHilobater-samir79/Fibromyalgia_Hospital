@@ -13,6 +13,7 @@ class CustomTextField extends StatefulWidget {
     required this.tController,
     required this.text,
     this.isPass = false,
+
   });
 
   @override

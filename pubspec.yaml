@@ -52,6 +52,7 @@ flutter:
        fonts:
          - asset: assets/fonts/Rubik-VariableFont_wght.ttf
          - asset: assets/fonts/Rubik-Italic-VariableFont_wght.ttf
+        
            style: italic
 
 flutter_launcher_icons:

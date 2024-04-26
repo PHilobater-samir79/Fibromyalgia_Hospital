@@ -12,7 +12,6 @@ import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class PatientSignUp extends StatefulWidget {
   static const String routeName = 'PatientSignUp';
 
@@ -24,9 +23,7 @@ class PatientSignUp extends StatefulWidget {
 
 class _PatientSignUpState extends State<PatientSignUp> {
   late bool currentBool = false;
-  TextEditingController ?nameController = TextEditingController();
-  TextEditingController ?emailController = TextEditingController();
-  TextEditingController ?passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -82,16 +79,16 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                     CustomTextField(text: AppStrings.name,tController: nameController,),
+                    const CustomTextField(text: AppStrings.name),
                     const SizedBox(
                       height: 10,
                     ),
-                     CustomTextField(text: AppStrings.email,tController: emailController,),
+                    const CustomTextField(text: AppStrings.email),
                     const SizedBox(
                       height: 10,
                     ),
-                    CustomTextField(
-                      text: AppStrings.password,tController: passController,
+                    const CustomTextField(
+                      text: AppStrings.password,
                       isPass: true,
                     ),
                     const SizedBox(
@@ -120,20 +117,17 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     SizedBox(
                       height: height * .06,
                     ),
-
                     CustomButton(
                         text: AppStrings.signup,
                         onTap: ()async  {
                           try {
-                            print( nameController!.text);
-                            print(emailController!.text);
-                            print(passController!.text);
-
                             final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                              email:emailController!.text,
-                              password:passController!.text,
+                              email:AppStrings.email,
+                              password:AppStrings.password,
                             );
-
+                            routeHomeName = GeneralPatientHomeScreen.routeName;
+                            Navigator.pushNamed(
+                                context, GeneralPatientHomeScreen.routeName);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
                               print('The password provided is too weak.');
@@ -143,9 +137,6 @@ class _PatientSignUpState extends State<PatientSignUp> {
                           } catch (e) {
                             print(e);
                           }
-                          routeHomeName = GeneralPatientHomeScreen.routeName;
-                          Navigator.pushReplacement(
-                              context,MaterialPageRoute(builder: (context){return GeneralPatientHomeScreen();}));
                         }),
                     TextButton(
                       onPressed: () {
