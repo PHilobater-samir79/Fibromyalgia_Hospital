@@ -12,27 +12,9 @@ import 'package:flutter/material.dart';
 import '../../doctor/doctor_chat/data/doctorchatmodel.dart';
 
 class PatientChatScreen extends StatelessWidget {
-   PatientChatScreen({super.key});
+  const PatientChatScreen({super.key});
   static const String routeName = 'PatientChatScreen';
- final _firestore = FirebaseFirestore.instance;
-   final _auth = FirebaseAuth.instance;
-   late User loggedInUser;
-   late String messageText;
 
-initState(){
-  getCurrentUser();
-  //super.initState();
-}
-   void getCurrentUser() async{
-   try{
-     final user = _auth.currentUser;
-     if(user != null){
-       loggedInUser = user;
-     }
-   } catch(e){
-     print(e);
-   }
- }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
