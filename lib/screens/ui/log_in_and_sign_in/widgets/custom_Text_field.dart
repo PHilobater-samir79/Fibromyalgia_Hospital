@@ -6,6 +6,7 @@ class CustomTextField extends StatefulWidget {
   final IconData? icon;
   TextEditingController ?tController = TextEditingController();
   final String text;
+
   final bool isPass;
    CustomTextField({
     super.key,

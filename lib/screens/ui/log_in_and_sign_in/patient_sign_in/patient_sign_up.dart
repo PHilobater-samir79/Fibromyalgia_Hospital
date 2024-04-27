@@ -23,6 +23,9 @@ class PatientSignUp extends StatefulWidget {
 
 class _PatientSignUpState extends State<PatientSignUp> {
   late bool currentBool = false;
+  TextEditingController patientNameController =TextEditingController();
+  TextEditingController patientEmailController =TextEditingController();
+  TextEditingController patientPassController =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -79,16 +82,16 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                    const CustomTextField(text: AppStrings.name),
+                    CustomTextField(text: AppStrings.name,tController: patientNameController),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(text: AppStrings.email),
+                     CustomTextField(text: AppStrings.email,tController: patientEmailController,),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(
-                      text: AppStrings.password,
+                     CustomTextField(
+                      text: AppStrings.password,tController: patientPassController,
                       isPass: true,
                     ),
                     const SizedBox(
@@ -122,12 +125,10 @@ class _PatientSignUpState extends State<PatientSignUp> {
                         onTap: ()async  {
                           try {
                             final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                              email:AppStrings.email,
-                              password:AppStrings.password,
+                              email:patientEmailController.text,
+                              password:patientPassController.text,
                             );
-                            routeHomeName = GeneralPatientHomeScreen.routeName;
-                            Navigator.pushNamed(
-                                context, GeneralPatientHomeScreen.routeName);
+
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
                               print('The password provided is too weak.');
@@ -137,6 +138,9 @@ class _PatientSignUpState extends State<PatientSignUp> {
                           } catch (e) {
                             print(e);
                           }
+                          routeHomeName = GeneralPatientHomeScreen.routeName;
+                          Navigator.pushReplacement(
+                              context, MaterialPageRoute(builder: (context){return GeneralPatientHomeScreen();}));
                         }),
                     TextButton(
                       onPressed: () {
