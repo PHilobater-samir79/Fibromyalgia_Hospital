@@ -100,7 +100,7 @@ class _FibromyalgiaAppState extends State<FibromyalgiaApp> {
           PatientSettingScreen.routeName: (context) =>
               const PatientSettingScreen(),
           DoctorChatScreen.routeName: (context) => const DoctorChatScreen(),
-          PatientChatScreen.routeName: (context) => const PatientChatScreen(),
+          PatientChatScreen.routeName: (context) =>  PatientChatScreen(),
           PharmaciesScreen.routeName: (context) => const PharmaciesScreen(),
           AppointmentScreen.routeName: (context) => const AppointmentScreen(),
           DoctorsSearchScreen.routeName: (context) =>
@@ -120,7 +120,7 @@ class _FibromyalgiaAppState extends State<FibromyalgiaApp> {
           PatientMessagesScreen.routeName: (context) =>
               const PatientMessagesScreen(),
           DoctorMessageScreen.routeName: (context) =>
-              const DoctorMessageScreen(),
+               DoctorMessageScreen(),
           GeneralPatientHomeScreen.routeName: (context) =>
               const GeneralPatientHomeScreen(),
           GeneralDoctorHomeScreen.routeName: (context) =>

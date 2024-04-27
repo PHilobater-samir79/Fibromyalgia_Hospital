@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_chat_container.dart';
 import 'package:fibromyalgia_hospital/screens/ui/patient/patient_chat/patient_messages_screen.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Strings/app_strings.dart';
@@ -5,14 +6,33 @@ import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dar
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../doctor/doctor_chat/data/doctorchatmodel.dart';
 
 class PatientChatScreen extends StatelessWidget {
-  const PatientChatScreen({super.key});
+   PatientChatScreen({super.key});
   static const String routeName = 'PatientChatScreen';
+ final _firestore = FirebaseFirestore.instance;
+   final _auth = FirebaseAuth.instance;
+   late User loggedInUser;
+   late String messageText;
 
+initState(){
+  getCurrentUser();
+  //super.initState();
+}
+   void getCurrentUser() async{
+   try{
+     final user = _auth.currentUser;
+     if(user != null){
+       loggedInUser = user;
+     }
+   } catch(e){
+     print(e);
+   }
+ }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

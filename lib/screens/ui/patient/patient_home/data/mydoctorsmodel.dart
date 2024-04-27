@@ -21,7 +21,7 @@ class MyDoctorModel {
     MyDoctorModel(
       Name: 'Dr. Loai Emad',
       imagePath: 'assets/images/loaiemaddent.jpg',
-      SubTittle: 'Tooth Dentist',
+      SubTittle: 'Dentist',
       Description:
       '5 Years Experience',
       FirstRatio: '75 %',

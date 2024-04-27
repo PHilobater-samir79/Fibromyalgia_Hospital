@@ -1,20 +1,45 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fibromyalgia_hospital/utils/styles/Text_style/app_text_style.dart';
 import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_arrow_back.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class DoctorMessageScreen extends StatefulWidget {
-  const DoctorMessageScreen({super.key});
-  static const String routeName = 'DoctorMessageScreen';
+   DoctorMessageScreen({super.key});
 
+  static const String routeName = 'DoctorMessageScreen';
   @override
   State<DoctorMessageScreen> createState() => _DoctorMessageScreenState();
 }
 
 class _DoctorMessageScreenState extends State<DoctorMessageScreen> {
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
+  late User signedInUser;
+  String? messageText;
+  
+  
   @override
+  void initState(){
+    super.initState();
+    getCurrentUser();
+  }
+  void getCurrentUser() async{
+    try{
+      final user = _auth.currentUser;
+      if(user != null){
+        signedInUser = user;
+        print(signedInUser.email);
+      }
+    } catch(e){
+      print(e);
+    }
+  }
+  @override
+
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -66,7 +91,7 @@ class _DoctorMessageScreenState extends State<DoctorMessageScreen> {
                                 width: 5,
                               ),
                               Text(
-                                'Online',
+                                 'Online',
                                 style: AppTextStyle.styleRegular15,
                               ),
                             ],
@@ -111,7 +136,10 @@ class _DoctorMessageScreenState extends State<DoctorMessageScreen> {
                                 children: [
                                   SizedBox(
                                     width: width * .54,
-                                    child: TextFormField(
+                                    child: TextField(
+                                      onChanged: (value){
+                                        messageText = value ;
+                                      },
                                       cursorColor: AppColors.blackTextColor,
                                       decoration: const InputDecoration(
                                           hintText: 'write a message',
@@ -147,14 +175,21 @@ class _DoctorMessageScreenState extends State<DoctorMessageScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 color: AppColors.greenColor),
-                            child: const Center(
-                                child: Icon(
-                              Icons.send,
-                              color: AppColors.whiteColor,
-                              size: 30,
-                            )),
+                            child:  Center(
+                                child: IconButton(icon: Icon(Icons.send), onPressed: () {
+                                  _firestore.collection('Messages').add({
+                                    'message': messageText,
+                                    'sender': signedInUser.email,
+                                  });
+                                },
+                                  //child: Icon(
+                                  // Icons.send,
+                                  color: AppColors.whiteColor,
+                                  //size: 30,
+                                ),
+                                )),
                           ),
-                        ),
+
                       ],
                     ),
                   ),
