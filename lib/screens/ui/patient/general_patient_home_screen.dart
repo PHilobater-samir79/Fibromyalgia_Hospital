@@ -106,7 +106,7 @@ class _GeneralPatientHomeScreenState extends State<GeneralPatientHomeScreen> {
   List<Widget> tabs = [
     const PatientHomeScreen(),
     const DoctorsSearchScreen(),
-    const PatientChatScreen(),
+     PatientChatScreen(),
     const PatientSettingScreen(),
   ];
 
