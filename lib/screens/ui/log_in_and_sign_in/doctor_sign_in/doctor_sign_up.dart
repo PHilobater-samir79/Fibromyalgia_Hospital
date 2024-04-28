@@ -9,6 +9,7 @@ import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class DoctorSignUp extends StatefulWidget {
@@ -81,7 +82,7 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                     CustomTextField(text: AppStrings.name,tController: doctoremailController),
+                     CustomTextField(text: AppStrings.name,tController: doctornameController),
                     const SizedBox(
                       height: 10,
                     ),
@@ -121,13 +122,29 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                     ),
                     CustomButton(
                         text: AppStrings.signup,
-                        onTap: () {
+                        onTap: ()async {
+                          try {
+                          final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                            email:doctoremailController!.text,
+                            password:doctorpassController!.text,
+                          );
+
+                        } on FirebaseAuthException catch (e) {
+                          if (e.code == 'weak-password') {
+                            print('The password provided is too weak.');
+                          } else if (e.code == 'email-already-in-use') {
+                            print('The account already exists for that email.');
+                          }
+                        } catch (e) {
+                          print(e);
+                        }
                           routeHomeName = GeneralDoctorHomeScreen.routeName;
                           Navigator.pushNamed(
                               context, GeneralDoctorHomeScreen.routeName);
                         }),
                     TextButton(
-                      onPressed: () {
+                      onPressed: ()  {
+
                         Navigator.pushNamed(context, DoctorLogIn.routeName);
                       },
                       child: Text(
