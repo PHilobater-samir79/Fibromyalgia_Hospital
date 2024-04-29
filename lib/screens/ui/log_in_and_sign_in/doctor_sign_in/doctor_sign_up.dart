@@ -27,6 +27,10 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
   TextEditingController ?doctoremailController = TextEditingController();
   TextEditingController ?doctorpassController = TextEditingController();
   TextEditingController ?doctornameController = TextEditingController();
+  GlobalKey<FormState> doctoremailkey =GlobalKey();
+  GlobalKey<FormState> doctorpasskey =GlobalKey();
+  GlobalKey<FormState> doctornamekey =GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -82,17 +86,19 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                     CustomTextField(text: AppStrings.name,tController: doctornameController),
+                     CustomTextField(text: AppStrings.name,
+                       tController: doctornameController,formstate:doctornamekey,),
                     const SizedBox(
                       height: 10,
                     ),
-                   CustomTextField(text: AppStrings.email,tController: doctoremailController),
+                   CustomTextField(text: AppStrings.email,
+                       tController: doctoremailController,formstate:doctoremailkey),
                     const SizedBox(
                       height: 10,
                     ),
                      CustomTextField(
                       text: AppStrings.password,tController: doctorpassController,
-                      isPass: true,
+                      isPass: true,formstate:doctorpasskey,
                     ),
                     const SizedBox(
                       height: 10,
@@ -138,6 +144,16 @@ class _DoctorSignUpState extends State<DoctorSignUp> {
                         } catch (e) {
                           print(e);
                         }
+                        if(doctoremailkey.currentState!.validate()){
+                          print ("Email valid");
+                        }else{
+                          print ("Email Not valid");
+                        }
+                          if(doctorpasskey.currentState!.validate()){
+                            print ("Pass valid");
+                          }else{
+                            print ("Pass Not valid");
+                          }
                           routeHomeName = GeneralDoctorHomeScreen.routeName;
                           Navigator.pushNamed(
                               context, GeneralDoctorHomeScreen.routeName);

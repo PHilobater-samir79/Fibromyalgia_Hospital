@@ -26,6 +26,9 @@ class _PatientSignUpState extends State<PatientSignUp> {
   TextEditingController patientNameController =TextEditingController();
   TextEditingController patientEmailController =TextEditingController();
   TextEditingController patientPassController =TextEditingController();
+  GlobalKey<FormState> patientEmailKey =GlobalKey();
+  GlobalKey<FormState> patientPassKey  =GlobalKey();
+  GlobalKey<FormState> patientNameKey =GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -82,17 +85,19 @@ class _PatientSignUpState extends State<PatientSignUp> {
                     SizedBox(
                       height: height * .02,
                     ),
-                    CustomTextField(text: AppStrings.name,tController: patientNameController),
+                    CustomTextField(text: AppStrings.name,
+                        tController: patientNameController,formstate:patientNameKey),
                     const SizedBox(
                       height: 10,
                     ),
-                     CustomTextField(text: AppStrings.email,tController: patientEmailController,),
+                     CustomTextField(text: AppStrings.email,
+                       tController: patientEmailController,formstate:patientEmailKey),
                     const SizedBox(
                       height: 10,
                     ),
                      CustomTextField(
                       text: AppStrings.password,tController: patientPassController,
-                      isPass: true,
+                      isPass: true,formstate:patientPassKey
                     ),
                     const SizedBox(
                       height: 10,

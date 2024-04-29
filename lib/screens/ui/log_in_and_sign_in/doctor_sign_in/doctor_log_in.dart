@@ -18,6 +18,8 @@ class DoctorLogIn extends StatelessWidget {
   static const String routeName = 'DoctorLogIn';
   TextEditingController ?doctoremailController = TextEditingController();
   TextEditingController ?doctorpassController = TextEditingController();
+  GlobalKey<FormState> doctoremailkey =GlobalKey();
+  GlobalKey<FormState> doctorpasskey =GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -74,13 +76,14 @@ class DoctorLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .02,
                     ),
-                    CustomTextField(text: AppStrings.email,tController: doctoremailController),
+                    CustomTextField(text: AppStrings.email,
+                        tController: doctoremailController,formstate:doctoremailkey),
                     const SizedBox(
                       height: 10,
                     ),
                      CustomTextField(
                       text: AppStrings.password,tController: doctorpassController,
-                      isPass: true,
+                      isPass: true,formstate:doctorpasskey
                     ),
                     SizedBox(
                       height: height * .05,
@@ -102,6 +105,15 @@ class DoctorLogIn extends StatelessWidget {
     }
     } catch (e) {
     print(e);
+    }  if(doctoremailkey.currentState!.validate()){
+      print ("Email valid");
+    }else{
+      print ("Email Not valid");
+    }
+    if(doctorpasskey.currentState!.validate()){
+      print ("Pass valid");
+    }else{
+      print ("Pass Not valid");
     }
                           routeHomeName = GeneralDoctorHomeScreen.routeName;
                           Navigator.pushNamed(
