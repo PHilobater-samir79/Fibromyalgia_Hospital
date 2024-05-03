@@ -10,6 +10,7 @@ import 'package:fibromyalgia_hospital/utils/styles/assets/app_assets.dart';
 import 'package:fibromyalgia_hospital/utils/styles/colors/app_colors.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_background.dart';
 import 'package:fibromyalgia_hospital/utils/widgets/custom_elevated_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class DoctorLogIn extends StatelessWidget {
@@ -17,6 +18,8 @@ class DoctorLogIn extends StatelessWidget {
   static const String routeName = 'DoctorLogIn';
   TextEditingController ?doctoremailController = TextEditingController();
   TextEditingController ?doctorpassController = TextEditingController();
+  GlobalKey<FormState> doctoremailkey =GlobalKey();
+  GlobalKey<FormState> doctorpasskey =GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -73,20 +76,45 @@ class DoctorLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .02,
                     ),
-                    CustomTextField(text: AppStrings.email,tController: doctoremailController),
+                    CustomTextField(text: AppStrings.email,
+                        tController: doctoremailController,formstate:doctoremailkey),
                     const SizedBox(
                       height: 10,
                     ),
                      CustomTextField(
                       text: AppStrings.password,tController: doctorpassController,
-                      isPass: true,
+                      isPass: true,formstate:doctorpasskey
                     ),
                     SizedBox(
                       height: height * .05,
                     ),
                     CustomButton(
                         text: AppStrings.login,
-                        onTap: () {
+                        onTap: () async{
+    try {
+    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email:doctoremailController!.text,
+    password:doctorpassController!.text,
+    );
+
+    } on FirebaseAuthException catch (e) {
+    if (e.code == 'weak-password') {
+    print('The password provided is too weak.');
+    } else if (e.code == 'email-already-in-use') {
+    print('The account already exists for that email.');
+    }
+    } catch (e) {
+    print(e);
+    }  if(doctoremailkey.currentState!.validate()){
+      print ("Email valid");
+    }else{
+      print ("Email Not valid");
+    }
+    if(doctorpasskey.currentState!.validate()){
+      print ("Pass valid");
+    }else{
+      print ("Pass Not valid");
+    }
                           routeHomeName = GeneralDoctorHomeScreen.routeName;
                           Navigator.pushNamed(
                               context, GeneralDoctorHomeScreen.routeName);

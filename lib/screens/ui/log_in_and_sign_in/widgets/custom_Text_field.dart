@@ -6,14 +6,16 @@ class CustomTextField extends StatefulWidget {
   final IconData? icon;
   TextEditingController ?tController = TextEditingController();
   final String text;
-
   final bool isPass;
-   CustomTextField({
+  GlobalKey<FormState> formstate =GlobalKey();
+
+  CustomTextField({
     super.key,
     this.icon,
     required this.tController,
     required this.text,
     this.isPass = false,
+    required this.formstate,
 
   });
 
@@ -22,12 +24,16 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
+
+
+
   bool obscure = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: TextFormField(
+        key:widget.formstate,
         controller: widget.tController ,
         onChanged: (value){
           setState(() {
@@ -35,7 +41,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
             print(widget.tController);
           });
         },
-        validator: (value) => value!.isEmpty ? "Requird" : null,
+        validator: (value) {
+          if(value!.isEmpty){
+            return "TextField is Empty";
+          }
+        },
         obscureText: widget.isPass ? obscure : false,
         cursorColor: AppColors.greyTextColor,
         decoration: InputDecoration(

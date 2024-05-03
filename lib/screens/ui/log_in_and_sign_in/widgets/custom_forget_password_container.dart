@@ -15,6 +15,8 @@ class CustomForgetPassContainer extends StatefulWidget {
 
 class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
   TextEditingController ?passController = TextEditingController();
+
+  GlobalKey<FormState>passKey  =GlobalKey();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -53,7 +55,9 @@ class _CustomForgetPassContainerState extends State<CustomForgetPassContainer> {
             const SizedBox(
               height: 25,
             ),
-            CustomTextField(text: AppStrings.email,tController: passController),
+            CustomTextField(text: AppStrings.email,
+                tController: passController,
+            formstate:passKey),
             const SizedBox(
               height: 30,
             ),

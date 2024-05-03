@@ -19,6 +19,8 @@ class PatientLogIn extends StatelessWidget {
   static const String routeName = 'PatientLogIn';
   TextEditingController ?emailController = TextEditingController();
   TextEditingController ?passController = TextEditingController();
+  GlobalKey<FormState> patientEmailKey =GlobalKey();
+  GlobalKey<FormState> patientPassKey  =GlobalKey();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -74,12 +76,13 @@ class PatientLogIn extends StatelessWidget {
                     SizedBox(
                       height: height * .02,
                     ),
-                     CustomTextField(text: AppStrings.email,tController: emailController),
+                     CustomTextField(text: AppStrings.email,
+                         tController: emailController,formstate:patientEmailKey),
                     const SizedBox(
                       height: 10,
                     ),
                      CustomTextField(tController: passController,
-                      text: AppStrings.password,
+                      text: AppStrings.password,formstate: patientPassKey,
                       isPass: true,
                     ),
                     SizedBox(
@@ -90,8 +93,8 @@ class PatientLogIn extends StatelessWidget {
                         onTap: ()async{
                           try {
                             final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                              email:AppStrings.email,
-                              password:AppStrings.password,
+                              email:emailController!.text,
+                              password:passController!.text,
                             );
 
                           } on FirebaseAuthException catch (e) {

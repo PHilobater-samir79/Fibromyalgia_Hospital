@@ -9,6 +9,8 @@ class CustomResetPasswordContainer extends StatelessWidget {
 
   TextEditingController ?passController = TextEditingController();
   TextEditingController ?rpassController = TextEditingController();
+  GlobalKey<FormState>rpassKey =GlobalKey();
+  GlobalKey<FormState> passKey  =GlobalKey();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -47,9 +49,11 @@ class CustomResetPasswordContainer extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-             CustomTextField(text: AppStrings.newPassword,isPass: true,tController:passController ),
+             CustomTextField(text: AppStrings.newPassword,isPass: true,
+                 tController:passController,formstate:passKey ),
             const SizedBox(height: 5,),
-             CustomTextField(text: AppStrings.reEnterPassword,isPass: true,tController: rpassController),
+             CustomTextField(text: AppStrings.reEnterPassword,
+                 isPass: true,tController: rpassController,formstate: rpassKey,),
             const SizedBox(
               height: 30,
             ),
